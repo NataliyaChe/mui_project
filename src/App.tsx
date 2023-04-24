@@ -1,25 +1,80 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import './App.scss';
+import { Home } from './pages/Home';
+import { Navbar } from './components/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import { ThemeProvider, createTheme, Divider, Box } from '@mui/material';
+import { Settings } from './pages/Settings'
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#2f3ced'
+      }
+    },
+    typography: {
+      h1: {
+        fontSize: 40,
+        fontWeight: 600,
+        fontFamily: 'Poppins',
+      },
+      h2: {
+        fontSize: 32,
+        fontWeight: 600,
+        fontFamily: 'Poppins',
+      },
+      h3: {
+        fontSize: 24,
+        fontWeight: 600,
+        fontFamily: 'Poppins',
+      },
+      h4: {
+        fontSize: 24,
+        fontWeight: 500,
+      },
+      h5: {
+        fontSize: 22,
+        fontWeight: 700,
+      },
+      h6: {
+        fontSize: 16,
+        fontWeight: 600,
+      },
+      subtitle1: {
+        fontSize: 14,
+        fontWeight: 500,
+      },
+      subtitle2: {
+        fontSize: 13,
+        fontWeight: 600,
+      },
+      body1: {
+        fontSize: 12,
+      },
+      body2: {
+        fontSize: 12,
+        fontWeight: 600,
+      },
+      button: {
+        fontSize: 14,
+        fontWeight: 600,
+      },
+
+    }
+  })
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+          <Navbar />
+          <Routes>
+            <Route path='/' element={ <Home /> } />
+            <Route path='/settings' element={ <Settings /> } />
+          </Routes>
+          <Divider orientation="vertical" />
+        
+      </div>
+    </ThemeProvider>
   );
 }
 
