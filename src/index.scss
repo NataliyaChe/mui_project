@@ -8,9 +8,11 @@ body {
 }
 
 .App {
-    width: 1440;
-    display: flex;
-    justify-content: center;
+    // width: 1440px;
+    // display: flex;
+    // justify-content: center;
+    // background-color: #D8BFD8;
+    // border-radius: 24px;
 }
 .home {
     
@@ -21,12 +23,8 @@ body {
 .nav {
     // width: 256px;
     // background-color: #FDFDFD;
-    background-color: teal;
+    // background-color: teal;
 
-}
-
-.nav__drawer {
-    background-color: teal;
 }
 
 .hero {
@@ -41,27 +39,26 @@ body {
         margin-bottom: 29px;
     }
 
-    &__img {
-        width: 620px;
-        height: 405px;
-        background-color: #2F3CED;
-        border-radius: 24px;
-    }
+    // &__img {
+    //     width: 620px;
+    //     height: 405px;
+    //     background-color: #2F3CED;
+    //     border-radius: 24px;
+    // }
 }
 .aside {
     width: 506px;
     background-color: #F5FBFF;
 }
 
-.title {
-    padding-top: 49px;
-    padding-right: 106px;
-    padding-bottom: 57px;
-    padding-left: 42px;
-    // font-family: 'Cormorant Garamond', serif;
-}
+// .title {
+//     padding-top: 49px;
+//     padding-right: 106px;
+//     padding-bottom: 57px;
+//     padding-left: 42px;
+// }
 
-.list-item {
-    height: 56px;
-}
+// .list-item {
+//     height: 56px;
+// }
 

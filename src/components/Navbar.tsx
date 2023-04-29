@@ -1,6 +1,6 @@
-// import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
-import { Divider, Paper, Box, Drawer, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Link } from '@mui/material';
+import { Divider, Paper, Box, Drawer, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Link, Avatar } from '@mui/material';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { ReactComponent as Setting } from '../images/icons/Setting.svg';
 import { ReactComponent as Award } from '../images/icons/award.svg';
@@ -9,94 +9,78 @@ import { ReactComponent as Heart } from '../images/icons/heart.svg';
 import { ReactComponent as Test } from '../images/icons/notepad.svg';
 import { ReactComponent as Achieve } from '../images/icons/achieve.svg';
 import { ReactComponent as Home } from '../images/icons/home.svg';
+import { ReactComponent as Top } from '../images/Top.svg';
+import { ReactComponent as Bottom } from '../images/Bottom.svg';
 
-const drawerWidth = 240;
+
 
 export function Navbar() {
-    return (
-        <div className="nav">
-        {/* <Drawer sx={{}} variant="permanent" anchor="left"> */}
-            <Toolbar className='title' sx={{}}>
-                <Typography component="h2" variant="h2">Elearn.</Typography>
-            </Toolbar>
-            <List sx={{width: 256,
-            // bgcolor: '#001E3C',
-            fontSize: 34}}>
-                <ListItem disablePadding className='list-item'>
-                <Link component={RouterLink} to="/">
-                    <ListItemButton >
-                        <ListItemIcon>
-                        <SvgIcon component={Home} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Home" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </Link>
-                    {/* <ListItemButton >
-                        <ListItemIcon>
-                        <SvgIcon component={Home} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Home" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton> */}
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <ListItemButton >
-                        <ListItemIcon>
-                        <SvgIcon component={Course} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText primary="My Courses" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <ListItemButton>
-                        <ListItemIcon>
-                        <SvgIcon component={Heart} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Favorite" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <ListItemButton>
-                        <ListItemIcon>
-                        <SvgIcon component={Test} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Test" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <ListItemButton>
-                        <ListItemIcon>
-                        <SvgIcon component={Award} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Achievements" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <ListItemButton>
-                        <ListItemIcon>
-                        <SvgIcon component={Achieve} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Certificate" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton>
-                </ListItem>
-                <ListItem disablePadding className='list-item'>
-                    <Link component={RouterLink} to="/settings">
-                        <ListItemButton >
-                            <ListItemIcon>
-                            <SvgIcon component={Setting} inheritViewBox />
-                            </ListItemIcon>
-                            <ListItemText  primary="Settings" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                        </ListItemButton>
-                    </Link>
-                    {/* <ListItemButton>
-                        <ListItemIcon>
-                        <SvgIcon component={Setting} inheritViewBox />
-                        </ListItemIcon>
-                        <ListItemText  primary="Settings" primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter',}}/>
-                    </ListItemButton> */}
-                </ListItem>
-            </List>
-        {/* </Drawer> */}
+    
 
-        </div> 
+    const navListData = [
+        { icon: <SvgIcon component={Home} fill="none" inheritViewBox />, path: "/", text: 'Home', id: 1},
+        { icon: <SvgIcon component={Course} inheritViewBox />, path: "#", text: 'My Courses', id: 2},
+        { icon: <SvgIcon component={Heart} fill="transparent" inheritViewBox />, path: "#", text: 'Favorite', id: 3},
+        { icon: <SvgIcon component={Test} inheritViewBox />, path: "#", text: 'Test', id: 4},
+        { icon: <SvgIcon component={Award} inheritViewBox />, path: "#", text: 'Achievements', id: 5},
+        { icon: <SvgIcon component={Achieve} inheritViewBox />, path: "#", text: 'Certificate', id: 6},
+        { icon: <SvgIcon component={Setting} inheritViewBox />, path: "/settings", text: 'Settings', id: 7},
+      ];
+    // const data = [
+    //     { icon: 'Home', path: "/", text: 'Home'},
+    //     { icon: 'Course', path: "#", text: 'My Courses'},
+    //     { icon: 'Heart', path: "#", text: 'Favorite'},
+    //     { icon: 'Test', path: "#", text: 'Test'},
+    //     { icon: 'Award', path: "#", text: 'Achievements'},
+    //     { icon: 'Achieve', path: "#", text: 'Certificate'},
+    //     { icon: 'Setting', path: "/settings", text: 'Settings'},
+    //   ];
+
+    const [selected, setSelected] = useState(0);
+
+    const handleListItemClick = (
+        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+        id: number,
+      ) => {
+        setSelected(id);
+      };
+
+    return (
+        <Box className="nav" sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '24px 0 0 24px', bgcolor: '#FDFDFD'}}>
+            <Box sx={{}}>
+                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px'}}>
+                    Elearn
+                    <Typography component="span" variant="h2" sx={{color: '#FF7C5D'}}>.</Typography>
+                </Typography>
+                <List sx={{ mr: '40px'}}>
+                    {navListData.map((item) => (
+                    <Link underline="none" component={RouterLink} to={item.path}>
+                        <ListItem disablePadding className='list-item'>
+                            <ListItemButton selected={selected === item.id} 
+                                onClick={(event) => handleListItemClick(event, item.id)}
+                                sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}}>
+                                <ListItemIcon sx={{minWidth: 24}}>
+                                {/* <SvgIcon component={item.icon} fill="none" inheritViewBox /> */}
+                                {item.icon}
+                                </ListItemIcon>
+                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px'}}/>
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                    ))}
+                </List>
+            </Box>
+            <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px'}}>
+                <Avatar alt="Toda D" src="/images/avatar.png" />
+                <Box sx={{display: 'flex', flexDirection: 'column',}}>
+                    <Typography>Toda D.</Typography>
+                    <Typography>Premium account</Typography>
+                </Box>
+                {/* <Box sx={{width: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
+                    <SvgIcon component={Top} inheritViewBox sx={{width: 8, height: 4}}/>
+                    <SvgIcon component={Bottom} inheritViewBox sx={{width: 8}}/>
+                </Box> */}
+            </Box>  
+        </Box> 
     )
 }
