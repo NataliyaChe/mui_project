@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
-import { Divider, Paper, Box, Drawer, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Link, Avatar } from '@mui/material';
+import { Divider, Paper, Box, Drawer, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Link, Avatar, Collapse } from '@mui/material';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { ReactComponent as Setting } from '../images/icons/Setting.svg';
 import { ReactComponent as Award } from '../images/icons/award.svg';
@@ -18,13 +18,13 @@ export function Navbar() {
     
 
     const navListData = [
-        { icon: <SvgIcon component={Home} fill="none" inheritViewBox />, path: "/", text: 'Home', id: 1},
-        { icon: <SvgIcon component={Course} inheritViewBox />, path: "#", text: 'My Courses', id: 2},
-        { icon: <SvgIcon component={Heart} fill="transparent" inheritViewBox />, path: "#", text: 'Favorite', id: 3},
-        { icon: <SvgIcon component={Test} inheritViewBox />, path: "#", text: 'Test', id: 4},
-        { icon: <SvgIcon component={Award} inheritViewBox />, path: "#", text: 'Achievements', id: 5},
-        { icon: <SvgIcon component={Achieve} inheritViewBox />, path: "#", text: 'Certificate', id: 6},
-        { icon: <SvgIcon component={Setting} inheritViewBox />, path: "/settings", text: 'Settings', id: 7},
+        { icon: <SvgIcon component={Home}  sx={{fill: 'none'}} inheritViewBox />, path: "/", text: 'Home', id: 1},
+        { icon: <SvgIcon component={Course} sx={{fill: 'none'}} inheritViewBox />, path: "#", text: 'My Courses', id: 2},
+        { icon: <SvgIcon component={Heart} fill="transparent" sx={{fill: 'none'}} inheritViewBox />, path: "#", text: 'Favorite', id: 3},
+        { icon: <SvgIcon component={Test} sx={{fill: 'none'}} inheritViewBox />, path: "#", text: 'Test', id: 4},
+        { icon: <SvgIcon component={Award} sx={{fill: 'none'}} inheritViewBox />, path: "#", text: 'Achievements', id: 5},
+        { icon: <SvgIcon component={Achieve} sx={{fill: 'none'}} inheritViewBox />, path: "#", text: 'Certificate', id: 6},
+        { icon: <SvgIcon component={Setting} sx={{fill: 'none'}}inheritViewBox />, path: "/settings", text: 'Settings', id: 7},
       ];
     // const data = [
     //     { icon: 'Home', path: "/", text: 'Home'},
@@ -52,34 +52,40 @@ export function Navbar() {
                     Elearn
                     <Typography component="span" variant="h2" sx={{color: '#FF7C5D'}}>.</Typography>
                 </Typography>
-                <List sx={{ mr: '40px'}}>
+                {/* <List sx={{ mr: '40px'}}> */}
                     {navListData.map((item) => (
-                    <Link underline="none" component={RouterLink} to={item.path}>
-                        <ListItem disablePadding className='list-item'>
+                    <Link underline="none" component={RouterLink} to={item.path} >
+                        <ListItem disablePadding className='list-item' sx={{width: 216}}>
                             <ListItemButton selected={selected === item.id} 
                                 onClick={(event) => handleListItemClick(event, item.id)}
                                 sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}}>
-                                <ListItemIcon sx={{minWidth: 24}}>
+                                {/* <ListItemIcon sx={{minWidth: 24}}> */}
                                 {/* <SvgIcon component={item.icon} fill="none" inheritViewBox /> */}
                                 {item.icon}
-                                </ListItemIcon>
+                                {/* </ListItemIcon> */}
                                 <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px'}}/>
                             </ListItemButton>
                         </ListItem>
                     </Link>
                     ))}
-                </List>
+                {/* </List> */}
             </Box>
-            <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px'}}>
+            <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px', alignItems: 'center'}}>
                 <Avatar alt="Toda D" src="/images/avatar.png" />
                 <Box sx={{display: 'flex', flexDirection: 'column',}}>
                     <Typography>Toda D.</Typography>
                     <Typography>Premium account</Typography>
                 </Box>
-                {/* <Box sx={{width: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
-                    <SvgIcon component={Top} inheritViewBox sx={{width: 8, height: 4}}/>
-                    <SvgIcon component={Bottom} inheritViewBox sx={{width: 8}}/>
-                </Box> */}
+                <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
+                {/* <Collapse>
+                        <Typography>Top</Typography>
+                </Collapse>
+                <Collapse>
+                        <Typography>Bottom</Typography>
+                </Collapse> */}
+                    <SvgIcon component={Top} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
+                    <SvgIcon component={Bottom} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
+                </Box>
             </Box>  
         </Box> 
     )

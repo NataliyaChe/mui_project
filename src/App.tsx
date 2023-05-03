@@ -3,11 +3,22 @@ import { Home } from './pages/Home';
 import { Navbar } from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import { ThemeProvider, createTheme, Divider, Box } from '@mui/material';
-import { Settings } from './pages/Settings'
+import { Settings } from './pages/Settings';
+import { Notification } from './components/Notification';
 
 function App() {
   const theme = createTheme({
-    
+    components: {
+      MuiListItemButton: {
+        styleOverrides: {
+          root: {  
+            '&.Mui-selected': {
+              backgroundColor: '#2f3ced',
+            },
+          },
+        },
+      },
+    },
     palette: {
       primary: {
         main: '#2f3ced'
@@ -86,10 +97,12 @@ function App() {
         <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex'}}>
           <Navbar />
           <Divider orientation="vertical" />
+          {/* <Notification /> */}
           <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/settings' element={ <Settings /> } />
           </Routes>
+          
         </Box>
           
         

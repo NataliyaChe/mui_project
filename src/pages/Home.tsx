@@ -5,7 +5,7 @@ import { Paper, Box } from '@mui/material';
 
 export function Home() {
     return (
-        <Box className='home'>
+        <Box className='home' sx={{width: 1183}}>
             <Hero />
             <Aside />
         </Box>

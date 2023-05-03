@@ -1,14 +1,18 @@
 import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions } from '@mui/material';
-// import BackgroundImage from '../images/images_8.svg';
+import { IHeroCard } from '../interfaces';
 
-export function SliderCard() {
+interface HeroCardProps {
+    item: IHeroCard
+}
+
+export function HeroCard({item}: HeroCardProps) {
     return (
         <Card variant="elevation" elevation={0} sx={{bgcolor: 'transparent', width: 215, pt: '33px', ml: '353px'}}>
             {/* <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, height: 359, width: 359, bgcolor: '#2f3ced', ml: '14px', pt: '18px'}}></Paper> */}
             <CardContent sx={{p: 0, mb: '16px'}}>
-                <Typography variant='h3' sx={{color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>Artificial Intelligence for Marketing</Typography>
+                <Typography variant='h3' sx={{color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>{item.title}</Typography>
                 <Typography variant='caption' >
-                    Learn how artificial intelligence is reshaping the way marketing is done at both large and small organizations.
+                    {item.text}
                 </Typography>
             </CardContent>
             <CardActions sx={{p: 0, mb: '42px'}}>
