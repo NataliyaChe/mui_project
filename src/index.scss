@@ -28,7 +28,7 @@ body {
 }
 
 .hero {
-    width: 677px;
+    width: 620px;
     background-color: #FDFDFD;
     padding-top: 47px;
     padding-right: 23px;
@@ -39,12 +39,12 @@ body {
         margin-bottom: 29px;
     }
 
-    // &__img {
-    //     width: 620px;
-    //     height: 405px;
-    //     background-color: #2F3CED;
-    //     border-radius: 24px;
-    // }
+    &__img {
+        width: 620px;
+        // height: 405px;
+        // background-color: #2F3CED;
+        // border-radius: 24px;
+    }
 }
 .aside {
     width: 506px;

@@ -1,7 +1,7 @@
 import { Paper, Box, Button, Typography, Card, CardContent, AvatarGroup, Avatar } from '@mui/material';
 import { HeroCard } from './HeroCard';
 import { CourseCard } from '../components/CourseCard';
-import BackgroundImage from '../images/images_8.svg';
+import BackgroundImage from '../images/image_bg.png';
 import { Slider } from '../components/Slider';
 import { IHeroCard } from '../interfaces';
 // import { ICourseCard } from '../interfaces';
@@ -55,7 +55,7 @@ export function Hero() {
     ]
 
     return (
-        <Box className="hero">
+        <Box className="hero" sx={{width: 620}}>
             <Box className='hero__title'>
                 <Typography component="h3" variant="h3" sx={{mb: 2.5}}>
                     Hi toda,
@@ -64,13 +64,14 @@ export function Hero() {
                     What will you learn today?
                 </Typography>
             </Box>
-                <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: 10.5, pt: '18px', pl: '14px'}}>
-                    <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, height: 359, width: 359, bgcolor: '#2f3ced', mb: '28px',}}>
-                        {/* <HeroCard /> */}
-                        <Slider newCourses={newCourses} />
-                    </Paper>
-                   
-                </Box>
+            <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: 10.5, pt: '18px', display: 'flex', gap: '36px'}}>
+                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: '#2f3ced', mb: '28px', ml: '14px'}}>
+                    {/* <HeroCard /> */}
+                    {/* <Slider newCourses={newCourses} /> */}
+                </Paper>
+                <Slider newCourses={newCourses} />
+                
+            </Box>
             <Box>
                 <Typography variant="h5" sx={{mb: '16px'}}>Your learning path</Typography>
                 <Box sx={{display: 'flex', gap: '24px'}}>
