@@ -9,3 +9,4 @@ export interface IHeroCard {
     text: string
     id: number
 }
+

@@ -1,16 +1,8 @@
 import { Paper, Box, Button, Typography, Card, CardContent, AvatarGroup, Avatar } from '@mui/material';
-import { HeroCard } from './HeroCard';
 import { CourseCard } from '../components/CourseCard';
 import BackgroundImage from '../images/image_bg.png';
 import { Slider } from '../components/Slider';
 import { IHeroCard } from '../interfaces';
-// import { ICourseCard } from '../interfaces';
-
-// interface ICourseCard {
-//     title: string
-//     text: string
-//     subscribersQty: string
-// }
 
 export function Hero() {
     const newCourses: IHeroCard[] = [
