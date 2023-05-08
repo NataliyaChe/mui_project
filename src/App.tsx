@@ -83,7 +83,7 @@ function App() {
         fontWeight: 600,
       },
       caption: {
-        fontSize: 14,
+        fontSize: 13,
         fontWeight: 400,
         fontFamily: 'Inter',
         color: '#FFFFFF'
