@@ -12,7 +12,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
         <Card variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
             <CardActionArea sx={{pl: '4px', pt: '8px', mb: 0}}>
                 <CardContent sx={{ pb: 0}}>
-                    <Typography variant='h6' sx={{mb: '8px'}}>{courseItem.title}</Typography>
+                    <Typography variant='h6' sx={{mb: '8px', lineHeight: '19.36px'}}>{courseItem.title}</Typography>
                     <Typography variant='body2' sx={{mb: '37px', width: '60%'}}>{courseItem.text}</Typography>
                 </CardContent>
             </CardActionArea>
@@ -29,7 +29,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
                         <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
                     </AvatarGroup>
                     <Box>
-                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked sx={{'&.Mui-checked': {color: '#F2C94C'}}}/>
+                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked sx={{width: 16, height: 16, mr: '21px', '&.Mui-checked': {color: '#F2C94C'}}}/>
                     </Box>
                 </Box>
                 

@@ -23,6 +23,9 @@ function App() {
       primary: {
         main: '#2f3ced'
       },
+      info: {
+        main: '#FF754C'
+      }
     },
     typography: {
       h1: {
@@ -94,10 +97,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div className="App">
-        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex'}}>
+        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex', position: 'relative'}}>
           <Navbar />
           <Divider orientation="vertical" />
-          {/* <Notification /> */}
+          <Notification />
           <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/settings' element={ <Settings /> } />

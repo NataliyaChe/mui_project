@@ -56,13 +56,9 @@ export function Hero() {
                     What will you learn today?
                 </Typography>
             </Box>
-            <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: 10.5, pt: '18px', display: 'flex', gap: '36px'}}>
-                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: '#2f3ced', mb: '28px', ml: '14px'}}>
-                    {/* <HeroCard /> */}
-                    {/* <Slider newCourses={newCourses} /> */}
-                </Paper>
-                <Slider newCourses={newCourses} />
-                
+            <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: '62px', pt: '18px', display: 'flex', gap: '36px'}}>
+                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: '#2f3ced', mb: '28px', ml: '14px'}} />
+                <Slider newCourses={newCourses} />    
             </Box>
             <Box>
                 <Typography variant="h5" sx={{mb: '16px'}}>Your learning path</Typography>
