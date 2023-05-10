@@ -18,6 +18,15 @@ function App() {
           },
         },
       },
+      MuiAccordion: {
+        styleOverrides: {
+          root: {
+            ':before': {
+              content: 'none'
+            }
+          }
+        }
+      }
     },
     palette: {
       primary: {
