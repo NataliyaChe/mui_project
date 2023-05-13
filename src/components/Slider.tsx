@@ -13,7 +13,13 @@ export function Slider({ newCourses }: SliderProps) {
         }}>
             <Carousel 
                 autoPlay={false}
-                navButtonsAlwaysInvisible={true}>
+                navButtonsAlwaysInvisible={true}
+                indicatorContainerProps={{
+                    style: {
+                        textAlign: 'left',
+                        color: 'red'   
+                    }
+                }}>
                 {newCourses.map((item) => (
                 <HeroCard item={item} key={item.id} />
             )

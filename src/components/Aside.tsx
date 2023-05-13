@@ -5,10 +5,10 @@ import { ReactComponent as Right } from '../images/Right.svg';
 
 export function Aside() {
     const progressListData = [
-        { icon: <SvgIcon component={Codeigniter}  sx={{fill: 'none', width: '32px', height: '32px'}} inheritViewBox />, path: "#", title: 'Build Your First Application', text: 'Codeigniter', id: 1},
-        { icon: <SvgIcon component={Codeigniter}  sx={{fill: 'none', width: '32px', height: '32px'}} inheritViewBox />, path: "#", title: 'Build something beautiful', text: 'Sketch', id: 2},
-        { icon: <SvgIcon component={Codeigniter}  sx={{fill: 'none', width: '32px', height: '32px'}} inheritViewBox />, path: "#", title: 'Firebase on Android: Cloud Fire', text: 'Firebase', id: 3},
-        { icon: <SvgIcon component={Codeigniter}  sx={{fill: 'none', width: '32px', height: '32px'}} inheritViewBox />, path: "#", title: 'Creating Custom Animations', text: 'Principle', id: 4},
+        { icon: <Codeigniter />, path: "#", title: 'Build Your First Application', text: 'Codeigniter', id: 1},
+        { icon: <Codeigniter />, path: "#", title: 'Build something beautiful', text: 'Sketch', id: 2},
+        { icon: <Codeigniter />, path: "#", title: 'Firebase on Android: Cloud Fire', text: 'Firebase', id: 3},
+        { icon: <Codeigniter />, path: "#", title: 'Creating Custom Animations', text: 'Principle', id: 4},
     ]
 
     return (
@@ -20,7 +20,7 @@ export function Aside() {
             {/* <List sx={{ml: '24px', mb: '53px'}}> */}
             <Box sx={{ml: '24px', mb: '53px'}}>
                 {progressListData.map((item) => (
-                    <Accordion sx={{mb: '8px', width: 444, borderRadius: '16px'}} elevation={0}>
+                    <Accordion key={item.id} sx={{mb: '8px', width: 444, borderRadius: '16px'}} elevation={0}>
                     <AccordionSummary
                         expandIcon={<Right />}
                         aria-controls={`${item.id}-content`}
@@ -28,6 +28,7 @@ export function Aside() {
                         sx={{ display: 'flex', alignItems: 'center', px: '24px'}}
                     >
                         <Paper sx={{width: 56, height: 56, borderRadius: '16px',bgcolor: '#FFA2C0', mr: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                        {/* <SvgIcon component={item.icon}  sx={{fill: 'none', width: '32px', height: '32px'}} inheritViewBox /> */}
                             {item.icon}
                         </Paper>
                         <Box>

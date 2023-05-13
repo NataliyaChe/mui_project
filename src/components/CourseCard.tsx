@@ -11,12 +11,6 @@ interface CourseCardProps {
 
 export function CourseCard({courseItem}: CourseCardProps) {
 
-    // const [open, setOpen] = useState(true);
-
-    // const handleClick = () => {
-    //     setOpen(!open);
-    // };
-
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,7 +25,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <Card variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
+        <Card key={courseItem.id} variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
             <CardActionArea sx={{pl: '4px', pt: '8px', mb: 0}}>
                 <CardContent sx={{ pb: 0}}>
                     <Typography variant='h6' sx={{mb: '8px', lineHeight: '19.36px'}}>{courseItem.title}</Typography>
