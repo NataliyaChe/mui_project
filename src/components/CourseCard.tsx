@@ -1,18 +1,34 @@
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, Collapse } from '@mui/material';
+import { useState } from 'react';
+import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, Collapse, IconButton, SvgIcon, Popover } from '@mui/material';
 import { ICourseCard } from '../interfaces';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
+import { ReactComponent as Dots } from '../images/Group.svg';
 
 interface CourseCardProps {
     courseItem: ICourseCard
 }
 
 export function CourseCard({courseItem}: CourseCardProps) {
+
+    const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
+
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+      setAnchorEl(event.currentTarget);
+    };
+  
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+  
+    const open = Boolean(anchorEl);
+    const id = open ? 'simple-popover' : undefined;
+
     return (
-        <Card variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
+        <Card key={courseItem.id} variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
             <CardActionArea sx={{pl: '4px', pt: '8px', mb: 0}}>
                 <CardContent sx={{ pb: 0}}>
-                    <Typography variant='h6' sx={{mb: '8px'}}>{courseItem.title}</Typography>
+                    <Typography variant='h6' sx={{mb: '8px', lineHeight: '19.36px'}}>{courseItem.title}</Typography>
                     <Typography variant='body2' sx={{mb: '37px', width: '60%'}}>{courseItem.text}</Typography>
                 </CardContent>
             </CardActionArea>
@@ -28,8 +44,30 @@ export function CourseCard({courseItem}: CourseCardProps) {
                         <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
                         <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
                     </AvatarGroup>
-                    <Box>
-                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked sx={{'&.Mui-checked': {color: '#F2C94C'}}}/>
+                    <Box sx={{mr: '15px'}}>
+                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}}/>
+                        <IconButton onClick={handleClick} aria-describedby={id} sx={{width: 16}}>
+                            <SvgIcon component={Dots} sx={{fill: 'none', width: '10px'}} inheritViewBox />
+                        </IconButton>
+                        <Popover
+                            id={id}
+                            open={open}
+                            anchorEl={anchorEl}
+                            onClose={handleClose}
+                            anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                            }}
+                            sx={{ ml: '-50px'}}>
+                            <Button>
+                                <Typography sx={{color: '#FF754C' }} variant='h6' >
+                                    Delete
+                                </Typography>
+                            </Button>
+                        </Popover>
+                        {/* <Collapse in={open} timeout="auto" unmountOnExit>
+                            <Button>Delete</Button>
+                        </Collapse> */}
                     </Box>
                 </Box>
                 
