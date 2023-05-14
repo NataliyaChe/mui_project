@@ -1,4 +1,4 @@
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions } from '@mui/material';
+import { Box } from '@mui/material';
 import { IHeroCard } from '../interfaces';
 import Carousel from 'react-material-ui-carousel';
 import { HeroCard } from '../components/HeroCard'

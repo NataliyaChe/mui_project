@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, Collapse, IconButton, SvgIcon, Popover } from '@mui/material';
+import { Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, IconButton, SvgIcon, Popover } from '@mui/material';
 import { ICourseCard } from '../interfaces';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
@@ -35,7 +35,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
             <CardActions sx={{pl: '20px', display: 'block', pt: 0}}>
                     <Typography variant='body1' component='h3' sx={{mb: '16px', }}>{courseItem.subscribersQty}</Typography>
                 
-                <Box component='div' sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                <Box sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <AvatarGroup max={6} spacing={'small'}>
                         <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
                         <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" sx={{ width: 24, height: 24}}/>
@@ -65,9 +65,6 @@ export function CourseCard({courseItem}: CourseCardProps) {
                                 </Typography>
                             </Button>
                         </Popover>
-                        {/* <Collapse in={open} timeout="auto" unmountOnExit>
-                            <Button>Delete</Button>
-                        </Collapse> */}
                     </Box>
                 </Box>
                 

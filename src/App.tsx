@@ -10,8 +10,8 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex', position: 'relative'}}>
+      <div>
+        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex', position: 'relative', margin: '0 auto'}}>
           <Navbar />
           <Divider orientation="vertical" />
           <Notification />

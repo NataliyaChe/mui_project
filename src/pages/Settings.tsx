@@ -1,7 +1,7 @@
 import { IHeroCard } from '../interfaces';
 import { Slider } from '../components/Slider';
 
-import { Paper, Box, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
 export function Settings() {
     const newCourses: IHeroCard[] = [
@@ -29,7 +29,6 @@ export function Settings() {
 
     return (
         <Box  sx={{p: '20px', width: 1183, bgcolor: '#E6E6FA',
-        //  display: 'flex', flexDirection: 'column'
         }}>
             <Slider newCourses={newCourses} />
         </Box>

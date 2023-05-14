@@ -1,4 +1,4 @@
-import { SvgIcon, Paper, Box, Typography, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Link, Avatar, Collapse, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
+import { SvgIcon, Paper, Box, Typography, Accordion, AccordionSummary, AccordionDetails } from '@mui/material';
 import { Search } from '../components/Search'
 import { ReactComponent as Codeigniter } from '../images/courses_item/1.svg';
 import { ReactComponent as Right } from '../images/Right.svg';
@@ -12,12 +12,11 @@ export function Aside() {
     ]
 
     return (
-        <Box className="aside" sx={{borderRadius: '0px 24px 24px 0px'}}>
+        <Box sx={{width: 506, bgcolor: '#F5FBFF', borderRadius: '0px 24px 24px 0px'}}>
             <Search />
             <Typography variant='h6' sx={{ml: '39px', mb: '24px'}}>
                 Course In Progress
             </Typography>
-            {/* <List sx={{ml: '24px', mb: '53px'}}> */}
             <Box sx={{ml: '24px', mb: '53px'}}>
                 {progressListData.map((item) => (
                     <Accordion key={item.id} sx={{mb: '8px', width: 444, borderRadius: '16px'}} elevation={0}>
@@ -38,8 +37,7 @@ export function Aside() {
                             <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: '#808191'}}>
                                 {item.text}
                             </Typography>
-                        </Box>
-                        
+                        </Box>  
                     </AccordionSummary>
                     <AccordionDetails>
                         <Typography variant='h6' sx={{color: '#808191'}}>
@@ -50,50 +48,13 @@ export function Aside() {
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
-                    // <ListItem disablePadding className='list-item' sx={{width: 444, display: 'flex', alignItems: 'center', p: '15px 24px 13px'}}>
-                    //     <Paper sx={{width: 56, height: 56, borderRadius: '16px',bgcolor: '#FFA2C0', mr: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-                    //         {item.icon}
-                    //     </Paper>
-                    //     <ListItemText  primary={item.title} primaryTypographyProps={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: '#11142D'}}
-                    //     secondary={item.text} secondaryTypographyProps={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: '#808191'}}/>
-                    // </ListItem>
                 ))}
-            {/* </List> */}
             </Box>
             <Typography variant='h5' sx={{ml: '24px', mb: '16px'}}>
                 Your learning point 
             </Typography>
             <Paper sx={{width: 444, height: 187, borderRadius: '24px', bgcolor: '#DDEDFF', ml: '24px' }} elevation={0} />
-        </Box>
-        
+        </Box>   
     )
 }
-
-{/* <Accordion>
-    <AccordionSummary
-        expandIcon={<Right />}
-        aria-controls={item.id}
-        id={item.id}
-        sx={{width: 444, display: 'flex', alignItems: 'center', p: '15px 24px 13px'}}
-    >
-        <Paper sx={{width: 56, height: 56, borderRadius: '16px',bgcolor: '#FFA2C0', mr: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            {item.icon}
-        </Paper>
-        <Typography sx={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: '#11142D'}}>
-            {item.title}
-        </Typography>
-        <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: '#808191'}}>
-            {item.text}
-        </Typography>
-    </AccordionSummary>
-    <AccordionDetails>
-        <Typography>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        malesuada lacus ex, sit amet blandit leo lobortis eget.
-        </Typography>
-    </AccordionDetails>
-</Accordion> */}
-{/* <Box sx={{width: 24, height: 24, display: 'flex', justifyContent: 'center', }}>
-    <SvgIcon component={Right} inheritViewBox sx={{fill: 'none', width: 4, height: 8}}/>
-</Box> */}
 

@@ -1,4 +1,4 @@
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions } from '@mui/material';
+import { Paper, Box, Button, Typography, Card, CardContent, CardActions } from '@mui/material';
 import { IHeroCard } from '../interfaces';
 
 interface HeroCardProps {

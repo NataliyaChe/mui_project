@@ -14,13 +14,15 @@ export const theme = createTheme({
       },
       MuiListItemText: {
         styleOverrides: {
-          root: {  
-            '&.Mui-selected': {
-              color: '#ffffff',
-            },
-          },
+            
+            // primary: {
+            //     '&.Mui-selected': {
+            //     color: '#000000',
+            //     }
+            // },
+            
         },
-      },
+    },
       MuiAccordion: {
         styleOverrides: {
           root: {
