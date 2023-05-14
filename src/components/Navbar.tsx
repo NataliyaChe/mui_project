@@ -63,7 +63,7 @@ export function Navbar() {
                                 {/* <SvgIcon component={item.icon} fill="none" inheritViewBox /> */}
                                 {item.icon}
                                 {/* </ListItemIcon> */}
-                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px'}}/>
+                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px'}} />
                             </ListItemButton>
                         </ListItem>
                     </Link>
