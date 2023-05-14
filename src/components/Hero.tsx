@@ -1,16 +1,8 @@
 import { Paper, Box, Button, Typography, Card, CardContent, AvatarGroup, Avatar } from '@mui/material';
-import { HeroCard } from './HeroCard';
 import { CourseCard } from '../components/CourseCard';
 import BackgroundImage from '../images/image_bg.png';
 import { Slider } from '../components/Slider';
 import { IHeroCard } from '../interfaces';
-// import { ICourseCard } from '../interfaces';
-
-// interface ICourseCard {
-//     title: string
-//     text: string
-//     subscribersQty: string
-// }
 
 export function Hero() {
     const newCourses: IHeroCard[] = [
@@ -41,16 +33,19 @@ export function Hero() {
             title: 'Sketch from A to Z', 
             text: '12 hours of video tutorials',
             subscribersQty: '423 students',
+            id: 1
         },
         {
             title: 'Intro to React', 
             text: '8 hours of video tutorials',
-            subscribersQty: '648 students'
+            subscribersQty: '648 students',
+            id: 2
         },
         {
             title: 'Become a Manager', 
             text: '24 hours of video tutorials',
-            subscribersQty: '562 students'
+            subscribersQty: '562 students',
+            id: 3
         },
     ]
 
@@ -64,19 +59,15 @@ export function Hero() {
                     What will you learn today?
                 </Typography>
             </Box>
-            <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: 10.5, pt: '18px', display: 'flex', gap: '36px'}}>
-                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: '#2f3ced', mb: '28px', ml: '14px'}}>
-                    {/* <HeroCard /> */}
-                    {/* <Slider newCourses={newCourses} /> */}
-                </Paper>
-                <Slider newCourses={newCourses} />
-                
+            <Box className="hero__img" sx={{width: 620, bgcolor: '#2F3CED', borderRadius: '24px', mb: '62px', pt: '18px', display: 'flex', gap: '36px'}}>
+                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: '#2f3ced', mb: '28px', ml: '14px'}} />
+                <Slider newCourses={newCourses} />    
             </Box>
             <Box>
                 <Typography variant="h5" sx={{mb: '16px'}}>Your learning path</Typography>
                 <Box sx={{display: 'flex', gap: '24px'}}>
                     {courses.map((courseItem) => (
-                        <CourseCard courseItem={courseItem} />
+                        <CourseCard courseItem={courseItem} key={courseItem.id}/>
                     ))}
                 </Box>
             </Box>
