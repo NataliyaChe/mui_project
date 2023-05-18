@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
 import { Box, Typography, ListItem, ListItemButton, ListItemIcon, ListItemText, Link, Avatar, } from '@mui/material';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
@@ -11,16 +11,17 @@ import { ReactComponent as Achieve } from '../images/icons/achieve.svg';
 import { ReactComponent as Home } from '../images/icons/home.svg';
 import { ReactComponent as Top } from '../images/Top.svg';
 import { ReactComponent as Bottom } from '../images/Bottom.svg';
+import { log } from 'console';
 
 export function Navbar() {
     const navListData = [
-        { icon: <Home />, path: "/", text: 'Home', id: 1},
-        { icon: <Course/>, path: "#", text: 'My Courses', id: 2},
-        { icon: <Heart/>, path: "#", text: 'Favorite', id: 3},
-        { icon: <Test/>, path: "#", text: 'Test', id: 4},
-        { icon: <Award/>, path: "#", text: 'Achievements', id: 5},
-        { icon: <Achieve/>, path: "#", text: 'Certificate', id: 6},
-        { icon: <Setting/>, path: "/settings", text: 'Settings', id: 7},
+        { icon: Home, path: "/", text: 'Home', id: 1},
+        { icon: Course, path: "#", text: 'My Courses', id: 2},
+        { icon: Heart, path: "#", text: 'Favorite', id: 3},
+        { icon: Test, path: "#", text: 'Test', id: 4},
+        { icon: Award, path: "#", text: 'Achievements', id: 5},
+        { icon: Achieve, path: "#", text: 'Certificate', id: 6},
+        { icon: Setting, path: "/settings", text: 'Settings', id: 7},
       ];
 
     const [selected, setSelected] = useState(0);
@@ -30,7 +31,15 @@ export function Navbar() {
         id: number,
       ) => {
         setSelected(id);
+        console.log('event', event);
+        console.log('target', event.target);
       };
+
+    useEffect(() => {
+        if(selected) {
+
+        }
+    }, [selected])
 
     return (
         <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '24px 0 0 24px', bgcolor: '#FDFDFD'}}>
@@ -42,17 +51,11 @@ export function Navbar() {
                     {navListData.map((item) => (
                     <Link underline="none" component={RouterLink} to={item.path} key={item.id} >
                         <ListItem disablePadding className='list-item' sx={{width: 216}}>
-                            <ListItemButton selected={selected === item.id} 
+                            <ListItemButton className='list-button' selected={selected === item.id} 
                                 onClick={(event) => handleListItemClick(event, item.id)}
-                                sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}}>
-                                {/* <ListItemIcon sx={{minWidth: 24}}> */}
-                                {/* <SvgIcon component={Home} sx={{color: 'transparent'}} fill="none" inheritViewBox /> */}
-                                {item.icon}
-                                {/* </ListItemIcon> */}
-                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px', }}/>
-                                {/* <ListItemText disableTypography primary={<Typography sx={{fontSize: 14, fontWeight: 600, fontFamily: 'Inter', color: '#808191', ml: '16px', '&.Mui-selected': {color: '#000000'}}}>
-                                    {item.text}
-                                </Typography>} /> */}
+                                sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}} >
+                                <SvgIcon component={item.icon} sx={{color: 'transparent', stroke: selected === item.id ? '#ffffff' : '#808191'}} fill="none" inheritViewBox />
+                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', ml: '16px', color: selected === item.id ? '#ffffff' : '#808191',}}/>
                                 
                             </ListItemButton>
                         </ListItem>

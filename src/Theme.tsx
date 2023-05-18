@@ -7,22 +7,27 @@ export const theme = createTheme({
           root: {  
             '&.Mui-selected': {
               backgroundColor: '#2f3ced',
-              color: 'error'
+              color: 'error',
+              '&.MuiListItemText': {
+                styleOverrides: {
+                  primaryTypographyProps: {
+                        color: '#000000',
+                    }, 
+                },
+            },
             },
           },
         },
       },
-      MuiListItemText: {
-        styleOverrides: {
-            
-            // primary: {
-            //     '&.Mui-selected': {
-            //     color: '#000000',
-            //     }
-            // },
-            
-        },
-    },
+    //   MuiListItemText: {
+    //     styleOverrides: {
+    //         primary: {
+    //             '&.Mui-selected': {
+    //             color: '#000000',
+    //             }
+    //         }, 
+    //     },
+    // },
       MuiAccordion: {
         styleOverrides: {
           root: {
