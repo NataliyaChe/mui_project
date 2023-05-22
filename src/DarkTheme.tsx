@@ -1,12 +1,12 @@
 import { createTheme } from '@mui/material';
 
-export const theme = createTheme({
+export const DarkTheme = createTheme({
     components: {
       MuiListItemButton: {
         styleOverrides: {
           root: {  
             '&.Mui-selected': {
-              backgroundColor: '#2f3ced',
+              backgroundColor: '#3F8CFF',
               color: 'error',
               '&.MuiListItemText': {
                 styleOverrides: {
@@ -19,15 +19,6 @@ export const theme = createTheme({
           },
         },
       },
-    //   MuiListItemText: {
-    //     styleOverrides: {
-    //         primary: {
-    //             '&.Mui-selected': {
-    //             color: '#000000',
-    //             }
-    //         }, 
-    //     },
-    // },
       MuiAccordion: {
         styleOverrides: {
           root: {
@@ -40,11 +31,24 @@ export const theme = createTheme({
     },
     palette: {
       primary: {
-        main: '#2f3ced'
+        main: '#1a1a1a',
+        contrastText: '#808191',
+      },
+      secondary: {
+        main: '#1f1f1f',
+        contrastText: '#ffffff',
       },
       info: {
-        main: '#FF754C'
-      }
+        main: '#3F8CFF',
+        contrastText: '#ffffff',
+      },
+      warning: {
+        main: '#242731'
+      },
+      success: {
+        main: '#6c5dd3',
+        contrastText: '#ffffff',
+      },
     },
     typography: {
       h1: {

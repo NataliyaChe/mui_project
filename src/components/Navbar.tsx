@@ -35,16 +35,10 @@ export function Navbar() {
         console.log('target', event.target);
       };
 
-    useEffect(() => {
-        if(selected) {
-
-        }
-    }, [selected])
-
     return (
-        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '24px 0 0 24px', bgcolor: '#FDFDFD'}}>
+        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '24px 0 0 24px', bgcolor: 'primary.main'}}>
             <Box sx={{}}>
-                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px'}}>
+                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px', color: 'secondary.contrastText'}}>
                     Elearn
                     <Typography component="span" variant="h2" sx={{color: '#FF7C5D'}}>.</Typography>
                 </Typography>
@@ -65,7 +59,7 @@ export function Navbar() {
             <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px', alignItems: 'center'}}>
                 <Avatar alt="Toda D" src="/images/avatar.png" />
                 <Box sx={{display: 'flex', flexDirection: 'column',}}>
-                    <Typography>Toda D.</Typography>
+                    <Typography sx={{color: 'secondary.contrastText'}}>Toda D.</Typography>
                     <Typography>Premium account</Typography>
                 </Box>
                 <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>

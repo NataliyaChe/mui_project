@@ -18,9 +18,9 @@ export function Notification() {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <Box sx={{ bgcolor: 'transparent', position: 'absolute', top: 48, right: 72, color: '#FFFFFF'}}>
-            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3}}>
-                <Badge badgeContent={4} color='info' sx={{ bgcolor: 'transparent', color: '#FFFFFF'}} >
+        <Box sx={{ bgcolor: 'transparent', position: 'absolute', top: 48, right: 72, color: 'warning.main'}}>
+            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: '#FFFFFF'}}>
+                <Badge badgeContent={4} color='error' sx={{ bgcolor: '#FFFFFF', color: '#FFFFFF'}} >
                     <SvgIcon component={Bell} sx={{fill: 'none', }} inheritViewBox />
                 </Badge>
             </IconButton>
