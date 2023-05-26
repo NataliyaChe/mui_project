@@ -69,7 +69,7 @@ export function Navbar() {
                 </Box>
                 <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
                     <SvgIcon component={Top} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
-                    <SvgIcon component={Bottom} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
+                    <SvgIcon component={Bottom} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0, color: 'info'}}/>
                 </Box>
             </Box>  
         </Box> 

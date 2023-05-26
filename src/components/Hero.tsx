@@ -18,7 +18,7 @@ export function Hero() {
                 </Typography>
             </Box>
             <Box sx={{width: 620, bgcolor: 'info.main', borderRadius: '24px', mb: '62px', pt: '18px', display: 'flex', gap: '36px'}}>
-                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', height: 359, width: 315, bgcolor: 'info.main', mb: '28px', ml: '14px'}} />
+                <Paper elevation={0} sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', maxHeight: 307, width: 315, bgcolor: 'info.main', ml: '14px'}} />
                 <Slider newCourses={newCourses} />    
             </Box>
             <Box>

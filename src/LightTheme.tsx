@@ -119,5 +119,12 @@ export const LightTheme = createTheme({
           },
         },
       },
+      MuiSvgIcon: {
+        styleOverrides: {
+          root: {  
+            color: "info"
+          },
+        },
+      },
     },
   })

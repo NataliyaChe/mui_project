@@ -10,7 +10,6 @@ interface CourseCardProps {
 }
 
 export function CourseCard({courseItem}: CourseCardProps) {
-
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -44,7 +43,6 @@ export function CourseCard({courseItem}: CourseCardProps) {
             <CardActions 
             sx={{display: 'block', p: 0}}>
                     <Typography variant='body1' component='h3' 
-                    // sx={{mb: '16px', }}
                     >
                         {courseItem.subscribersQty}
                     </Typography>
@@ -53,12 +51,9 @@ export function CourseCard({courseItem}: CourseCardProps) {
                 sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}
                 >
                     <AvatarGroup max={6} spacing={'small'}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
+                    {courseItem.subscribers.map((user) => (
+                        <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
+                    ))}
                     </AvatarGroup>
                     <Box>
                         <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked 
