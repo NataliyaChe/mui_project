@@ -40,7 +40,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
                         {courseItem.text}
                     </Typography>
                 </CardContent>
-            
+            </CardActionArea>
             <CardActions 
             sx={{display: 'block', p: 0}}>
                     <Typography variant='body1' component='h3' 
@@ -84,10 +84,8 @@ export function CourseCard({courseItem}: CourseCardProps) {
                             </Button>
                         </Popover>
                     </Box>
-                </Box>
-                
+                </Box>   
             </CardActions>
-            </CardActionArea>
         </Card>
     )
 }

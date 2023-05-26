@@ -1,34 +1,7 @@
 import { createTheme } from '@mui/material';
+import { alpha } from '@mui/material/styles';
 
 export const LightTheme = createTheme({
-    components: {
-      MuiListItemButton: {
-        styleOverrides: {
-          root: {  
-            '&.Mui-selected': {
-              backgroundColor: '#2f3ced',
-              color: '#ffffff',
-              '&.MuiListItemText': {
-                styleOverrides: {
-                  primaryTypographyProps: {
-                        color: '#000000',
-                    }, 
-                },
-            },
-            },
-          },
-        },
-      },
-      MuiAccordion: {
-        styleOverrides: {
-          root: {
-            ':before': {
-              content: 'none'
-            }
-          }
-        }
-      }
-    },
     palette: {
       primary: {
         main: '#fdfdfd',
@@ -43,7 +16,8 @@ export const LightTheme = createTheme({
         contrastText: '#ffffff',
       },
       warning: {
-        main: '#ffffff'
+        main: '#ffffff',
+        contrastText: '#121212'
       },
       success: {
         main: '#ddedff',
@@ -93,7 +67,7 @@ export const LightTheme = createTheme({
         fontWeight: 500,
       },
       subtitle2: {
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: 600,
       },
       body1: {
@@ -107,15 +81,43 @@ export const LightTheme = createTheme({
         fontFamily: 'Inter',
         color: '#808191'
       },
-      button: {
-        fontSize: 14,
-        fontWeight: 600,
-      },
       caption: {
         fontSize: 13,
         fontWeight: 400,
         fontFamily: 'Inter',
         color: '#FFFFFF'
       }
-    }
+    },
+    components: {
+      MuiListItemButton: {
+        styleOverrides: {
+          root: {  
+            '&.Mui-selected': {
+              backgroundColor: '#2f3ced',
+            },
+            '&:focus': {
+              backgroundColor: '#2f3ced',
+            },
+          },
+        },
+      },
+      MuiAccordion: {
+        styleOverrides: {
+          root: {
+            ':before': {
+              content: 'none'
+            }
+          }
+        }
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {  
+            '&:hover': {
+              backgroundColor: '#f2eeff',
+            },
+          },
+        },
+      },
+    },
   })

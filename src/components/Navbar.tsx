@@ -58,9 +58,14 @@ export function Navbar() {
             </Box>
             <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px', alignItems: 'center'}}>
                 <Avatar alt="Toda D" src="/images/avatar.png" />
-                <Box sx={{display: 'flex', flexDirection: 'column',}}>
-                    <Typography sx={{color: 'secondary.contrastText'}}>Toda D.</Typography>
-                    <Typography>Premium account</Typography>
+                <Box sx={{display: 'flex', flexDirection: 'column'}}>
+                    <Typography variant='subtitle2' 
+                        sx={{color: 'secondary.contrastText'}}>
+                        Toda D.
+                    </Typography>
+                    <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter'}}>
+                        Premium account
+                    </Typography>
                 </Box>
                 <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
                     <SvgIcon component={Top} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>

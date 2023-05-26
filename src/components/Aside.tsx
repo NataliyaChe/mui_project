@@ -11,7 +11,7 @@ export function Aside() {
             <Typography variant='h6' sx={{ml: '39px', mb: '24px', color: 'secondary.contrastText'}}>
                 Course In Progress
             </Typography>
-            <Box sx={{ml: '24px', mb: '53px'}}>
+            <Box sx={{ml: '24px', mb: '53px', bg: 'transparent'}}>
                 {progressList.map((item) => (
                     <Accordion key={item.id} sx={{mb: '8px', width: 444, borderRadius: '16px', bgcolor: 'warning.main'}} elevation={0}>
                     <AccordionSummary

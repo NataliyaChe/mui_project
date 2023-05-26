@@ -7,14 +7,25 @@ export const DarkTheme = createTheme({
           root: {  
             '&.Mui-selected': {
               backgroundColor: '#3F8CFF',
-              color: 'error',
-              '&.MuiListItemText': {
-                styleOverrides: {
-                  primaryTypographyProps: {
-                        color: '#000000',
-                    }, 
-                },
+              // color: 'error',
+              // '&.MuiListItemText': {
+              //   styleOverrides: {
+              //     primaryTypographyProps: {
+              //           color: '#000000',
+              //       }, 
+              //   },
+              // },
             },
+            '&:focus': {
+              backgroundColor: '#3F8CFF',
+              // color: '#ffffff',
+              // '&.MuiListItemText': {
+              //   styleOverrides: {
+              //     primaryTypographyProps: {
+              //           color: '#000000',
+              //       }, 
+              //   },
+              // },
             },
           },
         },
@@ -43,7 +54,8 @@ export const DarkTheme = createTheme({
         contrastText: '#ffffff',
       },
       warning: {
-        main: '#242731'
+        main: '#242731',
+        contrastText: '#ffffff',
       },
       success: {
         main: '#6c5dd3',
@@ -90,7 +102,7 @@ export const DarkTheme = createTheme({
         fontWeight: 500,
       },
       subtitle2: {
-        fontSize: 13,
+        fontSize: 14,
         fontWeight: 600,
       },
       body1: {
@@ -103,10 +115,6 @@ export const DarkTheme = createTheme({
         fontWeight: 600,
         fontFamily: 'Inter',
         color: '#808191'
-      },
-      button: {
-        fontSize: 14,
-        fontWeight: 600,
       },
       caption: {
         fontSize: 13,
