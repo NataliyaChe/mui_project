@@ -27,12 +27,9 @@ export function Navbar() {
     const [selected, setSelected] = useState(0);
 
     const handleListItemClick = (
-        event: React.MouseEvent<HTMLDivElement, MouseEvent>,
         id: number,
       ) => {
         setSelected(id);
-        console.log('event', event);
-        console.log('target', event.target);
       };
 
     return (
@@ -46,11 +43,10 @@ export function Navbar() {
                     <Link underline="none" component={RouterLink} to={item.path} key={item.id} >
                         <ListItem disablePadding className='list-item' sx={{width: 216}}>
                             <ListItemButton className='list-button' selected={selected === item.id} 
-                                onClick={(event) => handleListItemClick(event, item.id)}
+                                onClick={(event) => handleListItemClick(item.id)}
                                 sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}} >
                                 <SvgIcon component={item.icon} sx={{color: 'transparent', stroke: selected === item.id ? '#ffffff' : '#808191'}} fill="none" inheritViewBox />
-                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', ml: '16px', color: selected === item.id ? '#ffffff' : '#808191',}}/>
-                                
+                                <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', ml: '16px', color: selected === item.id ? '#ffffff' : '#808191',}}/>     
                             </ListItemButton>
                         </ListItem>
                     </Link>
