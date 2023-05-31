@@ -12,8 +12,7 @@ export function Search() {
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Search"
                 inputProps={{ 'aria-label': 'search', fontFamily: 'Inter', fontSize: 14, fontWeight: 600, color: 'primary.contrastText'}}
-            />
-            
+            />   
         </Paper>
     )
 }

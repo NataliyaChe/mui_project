@@ -7,25 +7,9 @@ export const DarkTheme = createTheme({
           root: {  
             '&.Mui-selected': {
               backgroundColor: '#3F8CFF',
-              // color: 'error',
-              // '&.MuiListItemText': {
-              //   styleOverrides: {
-              //     primaryTypographyProps: {
-              //           color: '#000000',
-              //       }, 
-              //   },
-              // },
             },
             '&:focus': {
               backgroundColor: '#3F8CFF',
-              // color: '#ffffff',
-              // '&.MuiListItemText': {
-              //   styleOverrides: {
-              //     primaryTypographyProps: {
-              //           color: '#000000',
-              //       }, 
-              //   },
-              // },
             },
           },
         },

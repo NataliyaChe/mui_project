@@ -41,24 +41,20 @@ export function CourseCard({courseItem}: CourseCardProps) {
                 </CardContent>
             </CardActionArea>
             <CardActions 
-            sx={{display: 'block', p: 0}}>
-                    <Typography variant='body1' component='h3' 
-                    >
-                        {courseItem.subscribersQty}
-                    </Typography>
-                
+                sx={{display: 'block', p: 0}}>
+                <Typography variant='body1' component='h3'>
+                    {courseItem.subscribersQty}
+                </Typography>
                 <Box 
-                sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}
-                >
+                sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <AvatarGroup max={6} spacing={'small'}>
-                    {courseItem.subscribers.map((user) => (
-                        <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
-                    ))}
+                        {courseItem.subscribers.map((user) => (
+                            <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
+                        ))}
                     </AvatarGroup>
                     <Box>
                         <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked 
-                        sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}}
-                        />
+                            sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}} />
                         <IconButton onClick={handleClick} aria-describedby={id} sx={{width: 16}}>
                             <SvgIcon component={Dots} sx={{fill: 'none', width: '10px'}} inheritViewBox />
                         </IconButton>

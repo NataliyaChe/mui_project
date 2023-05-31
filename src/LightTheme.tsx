@@ -1,5 +1,4 @@
 import { createTheme } from '@mui/material';
-import { alpha } from '@mui/material/styles';
 
 export const LightTheme = createTheme({
     palette: {

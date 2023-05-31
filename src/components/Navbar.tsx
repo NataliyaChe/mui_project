@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
-import { Box, Typography, ListItem, ListItemButton, ListItemIcon, ListItemText, Link, Avatar, } from '@mui/material';
+import { Box, Typography, ListItem, ListItemButton, ListItemText, Link, Avatar, } from '@mui/material';
 import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
 import { ReactComponent as Setting } from '../images/icons/Setting.svg';
 import { ReactComponent as Award } from '../images/icons/award.svg';
@@ -11,7 +11,6 @@ import { ReactComponent as Achieve } from '../images/icons/achieve.svg';
 import { ReactComponent as Home } from '../images/icons/home.svg';
 import { ReactComponent as Top } from '../images/Top.svg';
 import { ReactComponent as Bottom } from '../images/Bottom.svg';
-import { log } from 'console';
 
 export function Navbar() {
     const navListData = [
@@ -43,7 +42,7 @@ export function Navbar() {
                     <Link underline="none" component={RouterLink} to={item.path} key={item.id} >
                         <ListItem disablePadding className='list-item' sx={{width: 216}}>
                             <ListItemButton className='list-button' selected={selected === item.id} 
-                                onClick={(event) => handleListItemClick(item.id)}
+                                onClick={() => handleListItemClick(item.id)}
                                 sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}} >
                                 <SvgIcon component={item.icon} sx={{color: 'transparent', stroke: selected === item.id ? '#ffffff' : '#808191'}} fill="none" inheritViewBox />
                                 <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', ml: '16px', color: selected === item.id ? '#ffffff' : '#808191',}}/>     

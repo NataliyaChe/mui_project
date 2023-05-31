@@ -10,12 +10,10 @@ import { DarkTheme } from './DarkTheme';
 
 function App() {
   const [theme, setTheme] = useState(LightTheme);
-  console.log('state theme', theme);
 
-function changeTheme(event: any) {
-  theme === LightTheme ? setTheme(DarkTheme) : setTheme(LightTheme);
-  console.log('switch theme', theme);
-}
+  function changeTheme() {
+    theme === LightTheme ? setTheme(DarkTheme) : setTheme(LightTheme);
+  }
 
   return (
     <ThemeProvider theme={theme}>

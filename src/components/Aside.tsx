@@ -18,8 +18,7 @@ export function Aside() {
                         expandIcon={<Right />}
                         aria-controls={`${item.id}-content`}
                         id={`${item.id}-header`}
-                        sx={{ display: 'flex', alignItems: 'center', px: '24px'}}
-                    >
+                        sx={{ display: 'flex', alignItems: 'center', px: '24px'}}>
                         <Paper sx={{width: 56, height: 56, borderRadius: '16px',bgcolor: item.bgcolor, mr: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                             {item.icon}
                         </Paper>
