@@ -93,9 +93,9 @@ export const LightTheme = createTheme({
           root: {  
             '&.Mui-selected': {
               backgroundColor: '#2f3ced',
-            },
-            '&:focus': {
-              backgroundColor: '#2f3ced',
+              '&:hover': {
+                backgroundColor: '#2f3ced',
+              },
             },
           },
         },

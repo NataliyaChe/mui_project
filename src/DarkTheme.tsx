@@ -7,9 +7,9 @@ export const DarkTheme = createTheme({
           root: {  
             '&.Mui-selected': {
               backgroundColor: '#3F8CFF',
-            },
-            '&:focus': {
-              backgroundColor: '#3F8CFF',
+              '&:hover': {
+                backgroundColor: '#3F8CFF',
+              },
             },
           },
         },
@@ -45,6 +45,9 @@ export const DarkTheme = createTheme({
         main: '#6c5dd3',
         contrastText: '#ffffff',
       },
+      error: {
+        main:  '#FF754C'
+      }
     },
     typography: {
       h1: {

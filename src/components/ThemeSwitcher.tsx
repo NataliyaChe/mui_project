@@ -16,7 +16,7 @@ export function ThemeSwitcherComp({theme}: ThemeSwitcherCompProps) {
         <Switch
             color='error'
             inputProps={{ 'aria-label': 'theme switch' }} 
-            sx={{ position: 'absolute', top: 48, right: 132, bgcolor: 'error.main'}}
+            sx={{ position: 'absolute', top: 48, right: 132}}
             onClick={changeTheme}/>
     )
 }

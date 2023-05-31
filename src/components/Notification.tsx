@@ -38,7 +38,7 @@ export function Notification() {
                 horizontal: 'left',
                 }}
                 sx={{mt: '18px', ml: '-90px'}}>
-                <Typography sx={{ p: 2, color: '#808191',  }} variant='h6'>
+                <Typography sx={{ p: 2, color: 'primary.contrastText',  }} variant='h6'>
                     Notifications:
                 </Typography>
             </Popover>
