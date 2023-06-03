@@ -37,6 +37,18 @@ export const DarkTheme = createTheme({
         main: '#3F8CFF',
         contrastText: '#ffffff',
       },
+      secondary: {
+        main: '#242731',
+        contrastText: '#ffffff',
+      },
+      background: {
+        default: "#1a1a1a",
+        paper: '#1f1f1f'
+      },
+      text: {
+        primary: '#ffffff',
+        secondary: '#ffffff'
+      }
       // warning: {
       //   main: '#242731',
       //   contrastText: '#ffffff',
@@ -54,19 +66,16 @@ export const DarkTheme = createTheme({
         fontSize: 40,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#11142D'
       },
       h2: {
         fontSize: 32,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#11142D'
       },
       h3: {
         fontSize: 24,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#11142D'
       },
       h4: {
         fontSize: 24,
@@ -76,13 +85,11 @@ export const DarkTheme = createTheme({
         fontSize: 22,
         fontWeight: 700,
         fontFamily: 'Inter',
-        color: '#121212'
       },
       h6: {
         fontSize: 16,
         fontWeight: 600,
         fontFamily: 'Inter',
-        color: '#11142D'
       },
       subtitle1: {
         fontSize: 14,
@@ -107,7 +114,6 @@ export const DarkTheme = createTheme({
         fontSize: 13,
         fontWeight: 400,
         fontFamily: 'Inter',
-        color: '#FFFFFF'
       }
     }
   })

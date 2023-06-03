@@ -8,12 +8,12 @@ import { courses } from '../data/MyCourses';
 export function Hero() {
 
     return (
-        <Box sx={{width: 620, bgcolor: '#fdfdfd', p: '47px 23px 32px 34px'}}>
+        <Box sx={{width: 620, bgcolor: 'background.default', p: '47px 23px 32px 34px'}}>
             <Box sx={{mb: '29px'}}>
-                <Typography component="h3" variant="h3" sx={{mb: 2.5, color: '#11142D'}}>
+                <Typography component="h3" variant="h3" sx={{mb: 2.5, color: 'text.primary'}}>
                     Hi toda,
                 </Typography>
-                <Typography component="h1" variant="h1" sx={{color: '#11142D'}}>
+                <Typography component="h1" variant="h1" sx={{color: 'text.primary'}}>
                     What will you learn today?
                 </Typography>
             </Box>
@@ -28,7 +28,7 @@ export function Hero() {
                 <Slider newCourses={newCourses} />    
             </Box>
             <Box>
-                <Typography variant="h5" sx={{mb: '16px', color: '#121212'}}>Your learning path</Typography>
+                <Typography variant="h5" sx={{mb: '16px', color: 'text.secondary'}}>Your learning path</Typography>
                 <Box sx={{display: 'flex', gap: '24px'}}>
                     {courses.map((courseItem) => (
                         <CourseCard courseItem={courseItem} key={courseItem.id}/>

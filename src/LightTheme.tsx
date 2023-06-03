@@ -14,6 +14,18 @@ export const LightTheme = createTheme({
         main: '#2f3ced',
         contrastText: '#ffffff',
       },
+      secondary: {
+        main: '#ffffff',
+        contrastText: '#ffffff',
+      },
+      background: {
+        default: "#fdfdfd",
+        paper: '#f5fbff'
+      },
+      text: {
+        primary: '#11142D',
+        secondary: '#121212'
+      }
       // warning: {
       //   main: '#ffffff',
       //   contrastText: '#121212'
@@ -31,19 +43,16 @@ export const LightTheme = createTheme({
         fontSize: 40,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#2d112b'
       },
       h2: {
         fontSize: 32,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#11142D'
       },
       h3: {
         fontSize: 24,
         fontWeight: 600,
         fontFamily: 'Poppins',
-        color: '#11142D'
       },
       h4: {
         fontSize: 24,
@@ -53,13 +62,11 @@ export const LightTheme = createTheme({
         fontSize: 22,
         fontWeight: 700,
         fontFamily: 'Inter',
-        color: '#121212'
       },
       h6: {
         fontSize: 16,
         fontWeight: 600,
         fontFamily: 'Inter',
-        color: 'secondary.contrastText'
       },
       subtitle1: {
         fontSize: 14,
@@ -72,19 +79,16 @@ export const LightTheme = createTheme({
       body1: {
         fontSize: 12,
         fontFamily: 'Open-Sans',
-        color: '#808080'
       },
       body2: {
         fontSize: 12,
         fontWeight: 600,
         fontFamily: 'Inter',
-        color: '#808191'
       },
       caption: {
         fontSize: 13,
         fontWeight: 400,
         fontFamily: 'Inter',
-        color: '#FFFFFF'
       }
     },
     components: {

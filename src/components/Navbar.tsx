@@ -32,9 +32,9 @@ export function Navbar() {
       };
 
     return (
-        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: '#fdfdfd'}}>
+        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: 'background.default'}}>
             <Box sx={{}}>
-                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px', color: '#11142D'}}>
+                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px', color: 'text.primary'}}>
                     Elearn
                     <Typography component="span" variant="h2" sx={{color: '#FF7C5D'}}>.</Typography>
                 </Typography>
@@ -55,7 +55,7 @@ export function Navbar() {
                 <Avatar alt="Toda D" src="/images/avatar.png" />
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>
                     <Typography variant='subtitle2' 
-                        sx={{color: '#11142D'}}>
+                        sx={{color: 'text.primary'}}>
                         Toda D.
                     </Typography>
                     <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter'}}>
@@ -63,8 +63,12 @@ export function Navbar() {
                     </Typography>
                 </Box>
                 <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
-                    <SvgIcon component={Top} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
-                    <SvgIcon component={Bottom} inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0, color: 'info'}}/>
+                    <SvgIcon component={Top} 
+                    htmlColor='#808191'
+                    inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
+                    <SvgIcon component={Bottom} 
+                    htmlColor='#808191'
+                    inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0, stroke: 'text.secondary', }}/>
                 </Box>
             </Box>  
         </Box> 
