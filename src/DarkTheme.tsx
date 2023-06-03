@@ -25,29 +25,29 @@ export const DarkTheme = createTheme({
       }
     },
     palette: {
+      // primary: {
+      //   main: '#1a1a1a',
+      //   contrastText: '#808191',
+      // },
+      // secondary: {
+      //   main: '#1f1f1f',
+      //   contrastText: '#ffffff',
+      // },
       primary: {
-        main: '#1a1a1a',
-        contrastText: '#808191',
-      },
-      secondary: {
-        main: '#1f1f1f',
-        contrastText: '#ffffff',
-      },
-      info: {
         main: '#3F8CFF',
         contrastText: '#ffffff',
       },
-      warning: {
-        main: '#242731',
-        contrastText: '#ffffff',
-      },
-      success: {
-        main: '#6c5dd3',
-        contrastText: '#ffffff',
-      },
-      error: {
-        main:  '#FF754C'
-      }
+      // warning: {
+      //   main: '#242731',
+      //   contrastText: '#ffffff',
+      // },
+      // success: {
+      //   main: '#6c5dd3',
+      //   contrastText: '#ffffff',
+      // },
+      // error: {
+      //   main:  '#FF754C'
+      // }
     },
     typography: {
       h1: {

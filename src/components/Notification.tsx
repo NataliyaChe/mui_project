@@ -19,8 +19,8 @@ export function Notification() {
 
     return (
         <Box sx={{ bgcolor: 'transparent', position: 'absolute', top: 48, right: 72, }}>
-            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: 'warning.main'}}>
-                <Badge badgeContent={4} color='error' sx={{ bgcolor: 'warning.main'}} >
+            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: '#ffffff'}}>
+                <Badge badgeContent={4} color='error' sx={{ bgcolor: '#ffffff'}} >
                     <SvgIcon component={Bell} 
                     sx={{fill: 'none', stroke: '#000000'}} 
                     // sx={{color: 'transparent', stroke: '#000000'}} 
@@ -38,7 +38,7 @@ export function Notification() {
                 horizontal: 'left',
                 }}
                 sx={{mt: '18px', ml: '-90px'}}>
-                <Typography sx={{ p: 2, color: 'primary.contrastText',  }} variant='h6'>
+                <Typography sx={{ p: 2, color: '#808191',  }} variant='h6'>
                     Notifications:
                 </Typography>
             </Popover>

@@ -9,15 +9,33 @@ interface SliderProps {
 
 export function Slider({ newCourses }: SliderProps) {
     return (
-        <Box  sx={{p: 0, width: 203
-        }}>
+        <Box  
+        // sx={{p: 0, width: 203}}
+        sx={{width: 226, mt: '51px', mb: '30px'}}
+        >
             <Carousel 
                 autoPlay={false}
                 navButtonsAlwaysInvisible={true}
+                height={272}
                 indicatorContainerProps={{
                     style: {
                         textAlign: 'left',
-                        color: 'red'   
+                        marginTop: '32px', 
+                        
+                    }
+                }}
+                indicatorIconButtonProps={{
+                    style: {
+                        width: '4px',
+                        height: '4px',
+                        padding: '16px', 
+                        color: '#FFFFFF',
+                    }
+                }}
+                activeIndicatorIconButtonProps={{
+                    style: {
+                        backgroundColor: '#A0D7E7',
+                        width: '8px'
                     }
                 }}>
                 {newCourses.map((item) => (

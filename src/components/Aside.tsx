@@ -6,14 +6,14 @@ import { progressList } from '../data/ProgressListData';
 export function Aside() {
 
     return (
-        <Box sx={{width: 506, bgcolor: 'secondary.main', borderRadius: '0px 24px 24px 0px'}}>
+        <Box sx={{width: 506, bgcolor: '#f5fbff'}}>
             <Search />
-            <Typography variant='h6' sx={{ml: '39px', mb: '24px', color: 'secondary.contrastText'}}>
+            <Typography variant='h6' sx={{ml: '39px', mb: '24px', color: '#11142D'}}>
                 Course In Progress
             </Typography>
             <Box sx={{ml: '24px', mb: '53px', bg: 'transparent'}}>
                 {progressList.map((item) => (
-                    <Accordion key={item.id} sx={{mb: '8px', width: 444, borderRadius: '16px', bgcolor: 'warning.main'}} elevation={0}>
+                    <Accordion key={item.id} sx={{mb: '8px', width: 444, borderRadius: '16px', bgcolor: '#ffffff'}} elevation={0}>
                     <AccordionSummary
                         expandIcon={<Right />}
                         aria-controls={`${item.id}-content`}
@@ -23,10 +23,10 @@ export function Aside() {
                             {item.icon}
                         </Paper>
                         <Box>
-                            <Typography  sx={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: 'secondary.contrastText', }}>
+                            <Typography  sx={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: '#11142D', }}>
                                 {item.title}
                             </Typography>
-                            <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: 'primary.contrastText'}}>
+                            <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: '#808191'}}>
                                 {item.text}
                             </Typography>
                         </Box>  
@@ -42,10 +42,10 @@ export function Aside() {
                 </Accordion>
                 ))}
             </Box>
-            <Typography variant='h5' sx={{ml: '24px', mb: '16px', color: 'success.contrastText'}}>
+            <Typography variant='h5' sx={{ml: '24px', mb: '16px', color: '#121212'}}>
                 Your learning point 
             </Typography>
-            <Paper sx={{width: 444, height: 187, borderRadius: '24px', bgcolor: 'success.main', ml: '24px' }} elevation={0} />
+            <Paper sx={{width: 444, height: 187, borderRadius: '24px', bgcolor: '#ddedff', ml: '24px' }} elevation={0} />
         </Box>   
     )
 }

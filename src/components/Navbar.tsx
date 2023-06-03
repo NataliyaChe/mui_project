@@ -32,9 +32,9 @@ export function Navbar() {
       };
 
     return (
-        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRadius: '24px 0 0 24px', bgcolor: 'primary.main'}}>
+        <Box sx={{width: 256, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: '#fdfdfd'}}>
             <Box sx={{}}>
-                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px', color: 'secondary.contrastText'}}>
+                <Typography component="h2" variant="h2" sx={{mt: '49px', mr: '106px', mb: '57px', ml: '42px', color: '#11142D'}}>
                     Elearn
                     <Typography component="span" variant="h2" sx={{color: '#FF7C5D'}}>.</Typography>
                 </Typography>
@@ -55,7 +55,7 @@ export function Navbar() {
                 <Avatar alt="Toda D" src="/images/avatar.png" />
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>
                     <Typography variant='subtitle2' 
-                        sx={{color: 'secondary.contrastText'}}>
+                        sx={{color: '#11142D'}}>
                         Toda D.
                     </Typography>
                     <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter'}}>

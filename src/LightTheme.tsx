@@ -2,29 +2,29 @@ import { createTheme } from '@mui/material';
 
 export const LightTheme = createTheme({
     palette: {
+      // primary: {
+      //   main: '#fdfdfd',
+      //   contrastText: '#808191',
+      // },
+      // secondary: {
+      //   main: '#f5fbff',
+      //   contrastText: '#11142D',
+      // },
       primary: {
-        main: '#fdfdfd',
-        contrastText: '#808191',
-      },
-      secondary: {
-        main: '#f5fbff',
-        contrastText: '#11142D',
-      },
-      info: {
         main: '#2f3ced',
         contrastText: '#ffffff',
       },
-      warning: {
-        main: '#ffffff',
-        contrastText: '#121212'
-      },
-      success: {
-        main: '#ddedff',
-        contrastText: '#121212'
-      },
-      error: {
-        main:  '#FF754C'
-      }
+      // warning: {
+      //   main: '#ffffff',
+      //   contrastText: '#121212'
+      // },
+      // success: {
+      //   main: '#ddedff',
+      //   contrastText: '#121212'
+      // },
+      // error: {
+      //   main:  '#FF754C'
+      // }
     },
     typography: {
       h1: {
@@ -109,21 +109,21 @@ export const LightTheme = createTheme({
           }
         }
       },
-      MuiButton: {
-        styleOverrides: {
-          root: {  
-            '&:hover': {
-              backgroundColor: '#f2eeff',
-            },
-          },
-        },
-      },
-      MuiSvgIcon: {
-        styleOverrides: {
-          root: {  
-            color: "info"
-          },
-        },
-      },
+      // MuiButton: {
+      //   styleOverrides: {
+      //     root: {  
+      //       '&:hover': {
+      //         backgroundColor: '#f2eeff',
+      //       },
+      //     },
+      //   },
+      // },
+      // MuiSvgIcon: {
+      //   styleOverrides: {
+      //     root: {  
+      //       color: "primary"
+      //     },
+      //   },
+      // },
     },
   })

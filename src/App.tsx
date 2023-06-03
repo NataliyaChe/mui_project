@@ -18,7 +18,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex', position: 'relative', margin: '0 auto'}}>
+        <Box sx={{borderRadius: '24px', width: 1440, display: 'flex', position: 'relative', margin: '0 auto'}}>
           <Navbar />
           <Divider orientation="vertical" sx={{bgcolor: '#000000'}}/>
           <Switch

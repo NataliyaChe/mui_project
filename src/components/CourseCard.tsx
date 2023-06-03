@@ -25,13 +25,11 @@ export function CourseCard({courseItem}: CourseCardProps) {
 
     return (
         <Card variant="outlined" 
-        sx={{width: '190px', borderRadius: '24px', p: '24px 15px 6px 20px', bgcolor: 'warning.main'}}>
+        sx={{width: '190px', borderRadius: '24px', p: '24px 15px 6px 20px', bgcolor: '#ffffff'}}>
             <CardActionArea>
-                <CardContent 
-                sx={{ p: 0}}
-                >
+                <CardContent sx={{ p: 0}}>
                     <Typography variant='h6' 
-                    sx={{mb: '8px', lineHeight: '19.36px', color: 'secondary.contrastText'}}>
+                    sx={{mb: '8px', lineHeight: '19.36px', color: '#11142D'}}>
                         {courseItem.title}
                     </Typography>
                     <Typography variant='body2' 
