@@ -81,7 +81,7 @@ export const LightTheme = createTheme({
       },
       body1: {
         fontSize: 12,
-        fontFamily: 'Open-Sans',
+        fontFamily: 'Open Sans',
       },
       body2: {
         fontSize: 12,

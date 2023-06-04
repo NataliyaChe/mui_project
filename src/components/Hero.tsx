@@ -18,13 +18,9 @@ export function Hero() {
                 </Typography>
             </Box>
             <Box 
-            // sx={{width: 620, bgcolor: 'primary.main', borderRadius: '24px', mb: '62px', pt: '18px 27px 28px 14px', display: 'flex', gap: '36px'}}
-            sx={{width: 620, bgcolor: 'primary.main', borderRadius: '24px', mb: '62px', display: 'flex', gap: '36px', }}
-            >
+            sx={{width: 620, bgcolor: 'primary.main', borderRadius: '24px', mb: '62px', display: 'flex', gap: '36px', }}>
                 <Paper elevation={0} 
-                // sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', maxHeight: 307, width: 315, bgcolor: 'primary.main', ml: '14px'}} 
-                sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', maxHeight: 307, width: 315, bgcolor: 'primary.main', ml: '14px', mt: '18px'}} 
-                />
+                sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', maxHeight: 307, width: 315, bgcolor: 'primary.main', ml: '14px', mt: '18px'}} />
                 <Slider newCourses={newCourses} />    
             </Box>
             <Box>

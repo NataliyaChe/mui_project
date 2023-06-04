@@ -8,7 +8,7 @@ export function Aside() {
     return (
         <Box sx={{width: 506, bgcolor: 'background.paper'}}>
             <Search />
-            <Typography variant='h6' sx={{ml: '39px', mb: '24px', color: '#11142D'}}>
+            <Typography variant='h6' sx={{ml: '39px', mb: '24px', color: 'text.primary'}}>
                 Course In Progress
             </Typography>
             <Box sx={{ml: '24px', mb: '53px', bg: 'transparent'}}>
