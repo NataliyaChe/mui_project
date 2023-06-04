@@ -104,7 +104,7 @@ export const DarkTheme = createTheme({
       },
       body1: {
         fontSize: 12,
-        fontFamily: 'Open-Sans',
+        fontFamily: 'Open Sans',
         color: '#808080'
       },
       body2: {
