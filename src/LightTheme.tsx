@@ -18,6 +18,9 @@ export const LightTheme = createTheme({
         main: '#ffffff',
         contrastText: '#ffffff',
       },
+      info: {
+        main:  '#FF754C'
+      },
       background: {
         default: "#fdfdfd",
         paper: '#f5fbff'
@@ -34,7 +37,7 @@ export const LightTheme = createTheme({
       //   main: '#ddedff',
       //   contrastText: '#121212'
       // },
-      // error: {
+      // info: {
       //   main:  '#FF754C'
       // }
     },

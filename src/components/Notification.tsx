@@ -19,9 +19,10 @@ export function Notification() {
 
     return (
         <Box sx={{ bgcolor: 'transparent', position: 'absolute', top: 48, right: 72, }}>
-            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: '#ffffff'}}>
-                <Badge badgeContent={4} color='error' sx={{ bgcolor: '#ffffff'}} >
+            <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: 'secondary.main'}}>
+                <Badge badgeContent={4} color='info' sx={{ bgcolor: 'transparent'}} >
                     <SvgIcon component={Bell} 
+                    htmlColor='info'
                     sx={{fill: 'none', stroke: '#000000'}} 
                     // sx={{color: 'transparent', stroke: '#000000'}} 
                     // fill="none"
