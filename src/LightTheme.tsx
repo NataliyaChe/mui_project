@@ -2,14 +2,6 @@ import { createTheme } from '@mui/material';
 
 export const LightTheme = createTheme({
     palette: {
-      // primary: {
-      //   main: '#fdfdfd',
-      //   contrastText: '#808191',
-      // },
-      // secondary: {
-      //   main: '#f5fbff',
-      //   contrastText: '#11142D',
-      // },
       primary: {
         main: '#2f3ced',
         contrastText: '#ffffff',
@@ -29,17 +21,10 @@ export const LightTheme = createTheme({
         primary: '#11142D',
         secondary: '#121212'
       }
-      // warning: {
-      //   main: '#ffffff',
-      //   contrastText: '#121212'
-      // },
       // success: {
       //   main: '#ddedff',
       //   contrastText: '#121212'
       // },
-      // info: {
-      //   main:  '#FF754C'
-      // }
     },
     typography: {
       h1: {
