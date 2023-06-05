@@ -1,4 +1,4 @@
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions } from '@mui/material';
+import { Button, Typography, Card, CardContent, CardActions } from '@mui/material';
 import { IHeroCard } from '../interfaces';
 
 interface HeroCardProps {
@@ -7,16 +7,24 @@ interface HeroCardProps {
 
 export function HeroCard({item}: HeroCardProps) {
     return (
-        <Card  variant="elevation" elevation={0} sx={{bgcolor: 'transparent', width: 203, height: 274, pt: '33px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>    
-            <CardContent sx={{p: 0, height: 220,  }}>
-                <Typography variant='h3' sx={{color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>{item.title}</Typography>
-                <Typography variant='caption' >
+        <Card  variant="elevation" elevation={0} 
+        sx={{bgcolor: 'transparent', minHeight: 272, p: 0, m: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>    
+            <CardContent sx={{p: 0}}>
+                <Typography variant='h3' 
+                sx={{fontWeight: 600, color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>
+                    {item.title}
+                </Typography>
+                <Typography variant='caption' 
+                sx={{fontWeight: 400, width: 203, lineHeight: '24px', color: 'primary.contrastText'}}
+                paragraph={true}>
                     {item.text}
                 </Typography>
             </CardContent>
-            <CardActions sx={{p: 0, mb: '42px'}}>
-                <Button variant="contained" sx={{width: '158px', bgcolor: '#FFFFFF', borderRadius: '16px', py: '18px', mb: 0}} >
-                    <Typography variant='caption' sx={{color: '#11142D', fontWeight: 700, textTransform: 'none'}}>
+            <CardActions sx={{p: 0, m: 0}}>
+                <Button variant="contained" 
+                sx={{width: '158px', bgcolor: '#FFFFFF', borderRadius: '16px', py: '18px', m: 0}}>
+                    <Typography variant='subtitle1' 
+                    sx={{color: '#11142D', fontWeight: 700, textTransform: 'none', lineHeight: '20px',}}>
                         Learn now
                     </Typography>
                 </Button>

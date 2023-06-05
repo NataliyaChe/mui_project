@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { Paper, Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, Collapse, IconButton, SvgIcon, Popover } from '@mui/material';
+import { Box, Button, Typography, Card, CardContent, CardActionArea, CardActions, AvatarGroup, Avatar, Checkbox, IconButton, SvgIcon, Popover } from '@mui/material';
 import { ICourseCard } from '../interfaces';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
 import { ReactComponent as Dots } from '../images/Group.svg';
+import { useTheme } from '@mui/material';
 
 interface CourseCardProps {
     courseItem: ICourseCard
 }
 
 export function CourseCard({courseItem}: CourseCardProps) {
+    const theme = useTheme(); 
 
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
@@ -25,29 +27,38 @@ export function CourseCard({courseItem}: CourseCardProps) {
     const id = open ? 'simple-popover' : undefined;
 
     return (
-        <Card key={courseItem.id} variant="outlined" sx={{width: '190px', borderRadius: '24px', px: 0}}>
-            <CardActionArea sx={{pl: '4px', pt: '8px', mb: 0}}>
-                <CardContent sx={{ pb: 0}}>
-                    <Typography variant='h6' sx={{mb: '8px', lineHeight: '19.36px'}}>{courseItem.title}</Typography>
-                    <Typography variant='body2' sx={{mb: '37px', width: '60%'}}>{courseItem.text}</Typography>
+        <Card variant="outlined" 
+        sx={{width: '190px', borderRadius: '24px', p: '24px 15px 6px 20px', bgcolor: 'secondary.main'}}>
+            <CardActionArea>
+                <CardContent sx={{ p: 0}}>
+                    <Typography variant='h6' 
+                    sx={{mb: '8px', lineHeight: '19.36px', color: 'text.primary'}}>
+                        {courseItem.title}
+                    </Typography>
+                    <Typography variant='body2' 
+                    sx={{mb: '37px', width: '60%', color: 'secondary.contrastText'}}>
+                        {courseItem.text}
+                    </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions sx={{pl: '20px', display: 'block', pt: 0}}>
-                    <Typography variant='body1' component='h3' sx={{mb: '16px', }}>{courseItem.subscribersQty}</Typography>
-                
-                <Box component='div' sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <CardActions 
+                sx={{display: 'block', p: 0}}>
+                <Typography variant='body1' component='h3' sx={{color: 'secondary.contrastText'}}>
+                    {courseItem.subscribersQty}
+                </Typography>
+                <Box 
+                sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <AvatarGroup max={6} spacing={'small'}>
-                        <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Travis Howard" src="/static/images/avatar/2.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Cindy Baker" src="/static/images/avatar/3.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Agnes Walker" src="/static/images/avatar/4.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
-                        <Avatar alt="Trevor Henderson" src="/static/images/avatar/5.jpg" sx={{ width: 24, height: 24}}/>
+                        {courseItem.subscribers.map((user) => (
+                            <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}
+                            key={user.id}/>
+                        ))}
                     </AvatarGroup>
-                    <Box sx={{mr: '15px'}}>
-                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}}/>
+                    <Box>
+                        <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked 
+                            sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}} />
                         <IconButton onClick={handleClick} aria-describedby={id} sx={{width: 16}}>
-                            <SvgIcon component={Dots} sx={{fill: 'none', width: '10px'}} inheritViewBox />
+                            <SvgIcon component={Dots} sx={{width: '10px', fill: theme.palette.secondary.contrastText}} inheritViewBox />
                         </IconButton>
                         <Popover
                             id={id}
@@ -65,12 +76,8 @@ export function CourseCard({courseItem}: CourseCardProps) {
                                 </Typography>
                             </Button>
                         </Popover>
-                        {/* <Collapse in={open} timeout="auto" unmountOnExit>
-                            <Button>Delete</Button>
-                        </Collapse> */}
                     </Box>
-                </Box>
-                
+                </Box>   
             </CardActions>
         </Card>
     )

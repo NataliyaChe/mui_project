@@ -1,28 +1,38 @@
+import { useState } from 'react';
 import { Home } from './pages/Home';
 import { Navbar } from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
-import { ThemeProvider, Divider, Box } from '@mui/material';
+import { ThemeProvider, Divider, Box, Switch } from '@mui/material';
 import { Settings } from './pages/Settings';
 import { Notification } from './components/Notification';
-import { theme } from './Theme';
+import { LightTheme } from './LightTheme';
+import { DarkTheme } from './DarkTheme';
 
 function App() {
+  const [theme, setTheme] = useState(LightTheme);
+
+  function changeTheme() {
+    theme === LightTheme ? setTheme(DarkTheme) : setTheme(LightTheme);
+  }
 
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Box sx={{borderRadius: '24px', width: 1440, bgcolor: '#D8BFD8', display: 'flex', position: 'relative'}}>
+      <div>
+        <Box sx={{borderRadius: '24px', width: 1440, display: 'flex', position: 'relative', margin: '0 auto'}}>
           <Navbar />
-          <Divider orientation="vertical" />
+          <Divider sx={{ bgcolor: "#E4E4E4", height: 'inherit' }} orientation="vertical" />
+          <Switch
+            color='info'
+            inputProps={{ 'aria-label': 'theme switch' }} 
+            sx={{ position: 'absolute', top: 48, right: 132}}
+            onClick={changeTheme}
+            />
           <Notification />
           <Routes>
             <Route path='/' element={ <Home /> } />
             <Route path='/settings' element={ <Settings /> } />
           </Routes>
-          
-        </Box>
-          
-        
+        </Box> 
       </div>
     </ThemeProvider>
   );

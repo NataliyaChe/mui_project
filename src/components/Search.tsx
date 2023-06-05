@@ -1,22 +1,20 @@
-import { Paper, InputBase, IconButton, SvgIcon, Button, Typography, Box} from '@mui/material';
+import { Paper, InputBase, IconButton, SvgIcon } from '@mui/material';
 import { ReactComponent as SearchIcon } from '../images/SearchIcon.svg';
+import { useTheme } from '@mui/material';
 
 export function Search() {
-    return (
-        // <Box>
+    const theme = useTheme(); 
 
-        // </Box>
+    return (
         <Paper component="form"
-            sx={{ m: '64px 0 100px 39px', height: 24, width: 88, display: 'flex', alignItems: 'center', p: 0, bgcolor: '#F5FBFF'}} elevation={0}>
+            sx={{ m: '64px 0 100px 39px', height: 24, width: 100, display: 'flex', alignItems: 'center', p: 0, bgcolor: 'background.paper'}} elevation={0}>
             <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                <SvgIcon component={SearchIcon} inheritViewBox sx={{fill: 'none', width: 20, height: 20}}/>
+                <SvgIcon component={SearchIcon} inheritViewBox sx={{width: 20, height: 20, fill: theme.palette.text.primary}}/>
             </IconButton>
             <InputBase
                 sx={{ ml: 1, flex: 1 }}
                 placeholder="Search"
-                inputProps={{ 'aria-label': 'search', fontFamily: 'Inter', fontSize: 14, fontWeight: 600, }}
-            />
-            
+            />   
         </Paper>
     )
 }
