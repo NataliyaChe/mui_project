@@ -2,8 +2,10 @@ import { Paper, Box, Typography, Accordion, AccordionSummary, AccordionDetails }
 import { Search } from '../components/Search';
 import { ReactComponent as Right } from '../images/Right.svg';
 import { progressList } from '../data/ProgressListData';
+import { useTheme } from '@mui/material';
 
 export function Aside() {
+    const theme = useTheme();
 
     return (
         <Box sx={{width: 506, bgcolor: 'background.paper'}}>
@@ -18,7 +20,7 @@ export function Aside() {
                         expandIcon={<Right />}
                         aria-controls={`${item.id}-content`}
                         id={`${item.id}-header`}
-                        sx={{ display: 'flex', alignItems: 'center', px: '24px'}}>
+                        sx={{ display: 'flex', alignItems: 'center', px: '24px', stroke: theme.palette.text.primary}}>
                         <Paper sx={{width: 56, height: 56, borderRadius: '16px',bgcolor: item.bgcolor, mr: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                             {item.icon}
                         </Paper>
@@ -26,16 +28,16 @@ export function Aside() {
                             <Typography  sx={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: 'text.primary', }}>
                                 {item.title}
                             </Typography>
-                            <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: '#808191'}}>
+                            <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: 'secondary.contrastText'}}>
                                 {item.text}
                             </Typography>
                         </Box>  
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Typography variant='h6' sx={{color: '#808191'}}>
+                        <Typography variant='h6' sx={{color: 'secondary.contrastText'}}>
                             Continue course
                         </Typography>
-                        <Typography variant='h6' sx={{color: '#808191'}}>
+                        <Typography variant='h6' sx={{color: 'secondary.contrastText'}}>
                             Finish course
                         </Typography>
                     </AccordionDetails>

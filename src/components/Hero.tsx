@@ -18,13 +18,15 @@ export function Hero() {
                 </Typography>
             </Box>
             <Box 
-            sx={{width: 620, bgcolor: 'primary.main', borderRadius: '24px', mb: '62px', display: 'flex', gap: '36px', }}>
+            sx={{width: 620, bgcolor: 'primary.main', borderRadius: '24px', mb: '62px', display: 'flex', gap: '36px'}}>
                 <Paper elevation={0} 
                 sx={{ backgroundImage: `url(${BackgroundImage})`, backgroundSize: '100%', maxHeight: 307, width: 315, bgcolor: 'primary.main', ml: '14px', mt: '18px'}} />
                 <Slider newCourses={newCourses} />    
             </Box>
             <Box>
-                <Typography variant="h5" sx={{mb: '16px', color: 'text.secondary'}}>Your learning path</Typography>
+                <Typography variant="h5" sx={{mb: '16px', color: 'text.secondary'}}>
+                    Your learning path
+                </Typography>
                 <Box sx={{display: 'flex', gap: '24px'}}>
                     {courses.map((courseItem) => (
                         <CourseCard courseItem={courseItem} key={courseItem.id}/>

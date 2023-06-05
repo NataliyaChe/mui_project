@@ -11,8 +11,11 @@ import { ReactComponent as Achieve } from '../images/icons/achieve.svg';
 import { ReactComponent as Home } from '../images/icons/home.svg';
 import { ReactComponent as Top } from '../images/Top.svg';
 import { ReactComponent as Bottom } from '../images/Bottom.svg';
+import { useTheme } from '@mui/material';
 
 export function Navbar() {
+    const theme = useTheme(); 
+
     const navListData = [
         { icon: Home, path: "/", text: 'Home', id: 1},
         { icon: Course, path: "#", text: 'My Courses', id: 2},
@@ -44,7 +47,7 @@ export function Navbar() {
                             <ListItemButton className='list-button' selected={selected === item.id} 
                                 onClick={() => handleListItemClick(item.id)}
                                 sx={{pl: '24px', py: '16px', borderRadius: '0px 12px 12px 0px'}} >
-                                <SvgIcon component={item.icon} sx={{color: 'transparent', stroke: selected === item.id ? '#ffffff' : '#808191'}} fill="none" inheritViewBox />
+                                <SvgIcon component={item.icon} sx={{color: 'transparent', stroke: selected === item.id ? '#ffffff' : '#808191'}} inheritViewBox />
                                 <ListItemText  primary={item.text} primaryTypographyProps={{ fontSize: 14, fontWeight: 600, fontFamily: 'Inter', ml: '16px', color: selected === item.id ? '#ffffff' : '#808191',}}/>     
                             </ListItemButton>
                         </ListItem>
@@ -58,17 +61,17 @@ export function Navbar() {
                         sx={{color: 'text.primary'}}>
                         Toda D.
                     </Typography>
-                    <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter'}}>
+                    <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: 'secondary.contrastText'}}>
                         Premium account
                     </Typography>
                 </Box>
                 <Box sx={{width: 24, height: 24, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '6px'}}>
                     <SvgIcon component={Top} 
-                    htmlColor='#808191'
-                    inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0}}/>
+                        sx={{fill: 'none', width: 8, height: 4,stroke: theme.palette.text.primary}}
+                        inheritViewBox />
                     <SvgIcon component={Bottom} 
-                    htmlColor='#808191'
-                    inheritViewBox sx={{fill: 'none', width: 8, height: 4, m: 0, p: 0, stroke: 'text.secondary', }}/>
+                        sx={{fill: 'none', width: 8, height: 4, stroke: theme.palette.text.primary}}
+                        inheritViewBox />
                 </Box>
             </Box>  
         </Box> 

@@ -9,10 +9,7 @@ interface SliderProps {
 
 export function Slider({ newCourses }: SliderProps) {
     return (
-        <Box  
-        // sx={{p: 0, width: 203}}
-        sx={{width: 226, mt: '51px', mb: '30px'}}
-        >
+        <Box sx={{width: 226, mt: '51px', mb: '30px'}}>
             <Carousel 
                 autoPlay={false}
                 navButtonsAlwaysInvisible={true}
@@ -20,16 +17,16 @@ export function Slider({ newCourses }: SliderProps) {
                 indicatorContainerProps={{
                     style: {
                         textAlign: 'left',
-                        marginTop: '32px', 
-                        
+                        marginTop: '32px'    
                     }
                 }}
                 indicatorIconButtonProps={{
                     style: {
                         width: '4px',
                         height: '4px',
-                        padding: '16px', 
+                        padding: '8px', 
                         color: '#FFFFFF',
+                        margin: '0 5px'
                     }
                 }}
                 activeIndicatorIconButtonProps={{
@@ -39,9 +36,8 @@ export function Slider({ newCourses }: SliderProps) {
                     }
                 }}>
                 {newCourses.map((item) => (
-                <HeroCard item={item} key={item.id} />
-            )
-            )}
+                    <HeroCard item={item} key={item.id} />
+                ))}
             </Carousel>
         </Box>
     )

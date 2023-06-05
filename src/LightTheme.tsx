@@ -8,7 +8,7 @@ export const LightTheme = createTheme({
       },
       secondary: {
         main: '#ffffff',
-        contrastText: '#ffffff',
+        contrastText: '#808191',
       },
       info: {
         main:  '#FF754C'

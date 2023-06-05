@@ -4,12 +4,15 @@ import { ICourseCard } from '../interfaces';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import StarOutlineRoundedIcon from '@mui/icons-material/StarOutlineRounded';
 import { ReactComponent as Dots } from '../images/Group.svg';
+import { useTheme } from '@mui/material';
 
 interface CourseCardProps {
     courseItem: ICourseCard
 }
 
 export function CourseCard({courseItem}: CourseCardProps) {
+    const theme = useTheme(); 
+
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,14 +36,14 @@ export function CourseCard({courseItem}: CourseCardProps) {
                         {courseItem.title}
                     </Typography>
                     <Typography variant='body2' 
-                    sx={{mb: '37px', width: '60%'}}>
+                    sx={{mb: '37px', width: '60%', color: 'secondary.contrastText'}}>
                         {courseItem.text}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions 
                 sx={{display: 'block', p: 0}}>
-                <Typography variant='body1' component='h3'>
+                <Typography variant='body1' component='h3' sx={{color: 'secondary.contrastText'}}>
                     {courseItem.subscribersQty}
                 </Typography>
                 <Box 
@@ -55,7 +58,7 @@ export function CourseCard({courseItem}: CourseCardProps) {
                         <Checkbox icon={<StarOutlineRoundedIcon />} checkedIcon={<StarRoundedIcon />} defaultChecked 
                             sx={{width: 16, height: 16, mr: '6px', '&.Mui-checked': {color: '#F2C94C'}}} />
                         <IconButton onClick={handleClick} aria-describedby={id} sx={{width: 16}}>
-                            <SvgIcon component={Dots} sx={{fill: 'none', width: '10px'}} inheritViewBox />
+                            <SvgIcon component={Dots} sx={{width: '10px', fill: theme.palette.secondary.contrastText}} inheritViewBox />
                         </IconButton>
                         <Popover
                             id={id}
