@@ -20,7 +20,7 @@ function App() {
       <div>
         <Box sx={{borderRadius: '24px', width: 1440, display: 'flex', position: 'relative', margin: '0 auto'}}>
           <Navbar />
-          <Divider orientation="vertical"/>
+          <Divider sx={{ bgcolor: "#E4E4E4", height: 'inherit' }} orientation="vertical" />
           <Switch
             color='info'
             inputProps={{ 'aria-label': 'theme switch' }} 
