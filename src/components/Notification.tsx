@@ -6,6 +6,7 @@ import { useTheme } from '@mui/material';
 
 export function Notification() {
     const theme = useTheme();
+
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -22,7 +23,7 @@ export function Notification() {
     return (
         <Box sx={{ bgcolor: 'transparent', position: 'absolute', top: 48, right: 72, }}>
             <IconButton aria-describedby={id} onClick={handleClick} sx={{boxShadow: 3, bgcolor: 'secondary.main'}}>
-                <Badge badgeContent={4} color='info' sx={{ bgcolor: 'transparent'}}>
+                <Badge badgeContent={4} color='info' sx={{}}>
                     <SvgIcon component={Bell} 
                     sx={{fill: 'none', stroke: theme.palette.text.primary}} 
                     inheritViewBox />
