@@ -24,7 +24,7 @@ export const LightTheme = createTheme({
       text: {
         primary: '#11142D',
         secondary: '#121212'
-      }
+      },
     },
     typography: {
       h1: {
