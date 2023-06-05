@@ -88,6 +88,18 @@ export const DarkTheme = createTheme({
             }
           }
         }
+      },
+      MuiInputBase: {
+        styleOverrides: {
+          input: {
+            '&::placeholder':  {
+              fontFamily: 'Inter', 
+              fontSize: 14, 
+              fontWeight: 600,
+              color: '#808191'
+            }
+          }
+        }
       }
     },
   })
