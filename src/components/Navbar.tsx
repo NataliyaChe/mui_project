@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Link as RouterLink } from "react-router-dom";
 import { Box, Typography, ListItem, ListItemButton, ListItemText, Link, Avatar, } from '@mui/material';
-import SvgIcon, { SvgIconProps } from '@mui/material/SvgIcon';
+import SvgIcon from '@mui/material/SvgIcon';
 import { ReactComponent as Setting } from '../images/icons/Setting.svg';
 import { ReactComponent as Award } from '../images/icons/award.svg';
 import { ReactComponent as Course } from '../images/icons/mycourse.svg';
