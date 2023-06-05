@@ -47,7 +47,8 @@ export function CourseCard({courseItem}: CourseCardProps) {
                 sx={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                     <AvatarGroup max={6} spacing={'small'}>
                         {courseItem.subscribers.map((user) => (
-                            <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}/>
+                            <Avatar alt={user.name} src="/static/images/avatar/1.jpg" sx={{ width: 24, height: 24}}
+                            key={user.id}/>
                         ))}
                     </AvatarGroup>
                     <Box>
