@@ -39,12 +39,7 @@ export const LightTheme = createTheme({
       },
       h3: {
         fontSize: 24,
-        fontWeight: 600,
         fontFamily: 'Poppins',
-      },
-      h4: {
-        fontSize: 24,
-        fontWeight: 500,
       },
       h5: {
         fontSize: 22,
@@ -58,11 +53,7 @@ export const LightTheme = createTheme({
       },
       subtitle1: {
         fontSize: 14,
-        fontWeight: 500,
-      },
-      subtitle2: {
-        fontSize: 14,
-        fontWeight: 600,
+        fontFamily: 'Inter',
       },
       body1: {
         fontSize: 12,
@@ -75,7 +66,7 @@ export const LightTheme = createTheme({
       },
       caption: {
         fontSize: 13,
-        fontWeight: 400,
+        fontWeight: 600,
         fontFamily: 'Inter',
       }
     },
@@ -101,21 +92,5 @@ export const LightTheme = createTheme({
           }
         }
       },
-      // MuiButton: {
-      //   styleOverrides: {
-      //     root: {  
-      //       '&:hover': {
-      //         backgroundColor: '#f2eeff',
-      //       },
-      //     },
-      //   },
-      // },
-      // MuiSvgIcon: {
-      //   styleOverrides: {
-      //     root: {  
-      //       color: "primary"
-      //     },
-      //   },
-      // },
     },
   })

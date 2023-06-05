@@ -25,10 +25,10 @@ export function Aside() {
                             {item.icon}
                         </Paper>
                         <Box>
-                            <Typography  sx={{ fontSize: 16, fontWeight: 600, fontFamily: 'Inter', color: 'text.primary', }}>
+                            <Typography  variant='h6' sx={{color: 'text.primary'}}>
                                 {item.title}
                             </Typography>
-                            <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: 'secondary.contrastText'}}>
+                            <Typography variant='caption' sx={{color: 'secondary.contrastText'}}>
                                 {item.text}
                             </Typography>
                         </Box>  

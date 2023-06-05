@@ -1,29 +1,6 @@
 import { createTheme } from '@mui/material';
 
 export const DarkTheme = createTheme({
-    components: {
-      MuiListItemButton: {
-        styleOverrides: {
-          root: {  
-            '&.Mui-selected': {
-              backgroundColor: '#3F8CFF',
-              '&:hover': {
-                backgroundColor: '#3F8CFF',
-              },
-            },
-          },
-        },
-      },
-      MuiAccordion: {
-        styleOverrides: {
-          root: {
-            ':before': {
-              content: 'none'
-            }
-          }
-        }
-      }
-    },
     palette: {
       primary: {
         main: '#3F8CFF',
@@ -62,12 +39,7 @@ export const DarkTheme = createTheme({
       },
       h3: {
         fontSize: 24,
-        fontWeight: 600,
         fontFamily: 'Poppins',
-      },
-      h4: {
-        fontSize: 24,
-        fontWeight: 500,
       },
       h5: {
         fontSize: 22,
@@ -81,27 +53,41 @@ export const DarkTheme = createTheme({
       },
       subtitle1: {
         fontSize: 14,
-        fontWeight: 500,
-      },
-      subtitle2: {
-        fontSize: 14,
-        fontWeight: 600,
+        fontFamily: 'Inter',
       },
       body1: {
         fontSize: 12,
         fontFamily: 'Open Sans',
-        color: '#808080'
       },
       body2: {
         fontSize: 12,
         fontWeight: 600,
         fontFamily: 'Inter',
-        color: '#808191'
       },
       caption: {
         fontSize: 13,
-        fontWeight: 400,
+        fontWeight: 600,
         fontFamily: 'Inter',
       }
-    }
+    },
+    components: {
+      MuiListItemButton: {
+        styleOverrides: {
+          root: {  
+            '&.Mui-selected': {
+              backgroundColor: '#3F8CFF',
+            },
+          },
+        },
+      },
+      MuiAccordion: {
+        styleOverrides: {
+          root: {
+            ':before': {
+              content: 'none'
+            }
+          }
+        }
+      }
+    },
   })

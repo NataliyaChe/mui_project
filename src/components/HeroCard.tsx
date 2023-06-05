@@ -11,11 +11,11 @@ export function HeroCard({item}: HeroCardProps) {
         sx={{bgcolor: 'transparent', minHeight: 272, p: 0, m: 0, display: 'flex', flexDirection: 'column', justifyContent: 'space-between'}}>    
             <CardContent sx={{p: 0}}>
                 <Typography variant='h3' 
-                sx={{color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>
+                sx={{fontWeight: 600, color: '#FFFFFF', lineHeight: '32px', mb: '8px'}}>
                     {item.title}
                 </Typography>
                 <Typography variant='caption' 
-                sx={{width: 203, lineHeight: '24px', color: 'primary.contrastText'}}
+                sx={{fontWeight: 400, width: 203, lineHeight: '24px', color: 'primary.contrastText'}}
                 paragraph={true}>
                     {item.text}
                 </Typography>
@@ -23,7 +23,7 @@ export function HeroCard({item}: HeroCardProps) {
             <CardActions sx={{p: 0, m: 0}}>
                 <Button variant="contained" 
                 sx={{width: '158px', bgcolor: '#FFFFFF', borderRadius: '16px', py: '18px', m: 0}}>
-                    <Typography variant='caption' 
+                    <Typography variant='subtitle1' 
                     sx={{color: '#11142D', fontWeight: 700, textTransform: 'none', lineHeight: '20px',}}>
                         Learn now
                     </Typography>

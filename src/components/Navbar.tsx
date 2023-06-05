@@ -57,11 +57,11 @@ export function Navbar() {
             <Box sx={{display: 'flex', gap: 2, pt: '24px', pb: '30px', pl: '26px', alignItems: 'center'}}>
                 <Avatar alt="Toda D" src="/images/avatar.png" />
                 <Box sx={{display: 'flex', flexDirection: 'column'}}>
-                    <Typography variant='subtitle2' 
-                        sx={{color: 'text.primary'}}>
+                    <Typography variant='subtitle1' 
+                        sx={{fontWeight: 600, color: 'text.primary'}}>
                         Toda D.
                     </Typography>
-                    <Typography sx={{fontSize: 13, fontWeight: 600, fontFamily: 'Inter', color: 'secondary.contrastText'}}>
+                    <Typography variant='caption' sx={{color: 'secondary.contrastText'}}>
                         Premium account
                     </Typography>
                 </Box>
