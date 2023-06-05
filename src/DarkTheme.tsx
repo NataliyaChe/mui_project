@@ -14,6 +14,10 @@ export const DarkTheme = createTheme({
         main:  '#FF754C',
         contrastText: '#ffffff',
       },
+      success: {
+        main: '#6c5dd3',
+        contrastText: '#ffffff',
+      },
       background: {
         default: "#1a1a1a",
         paper: '#1f1f1f'
@@ -22,10 +26,6 @@ export const DarkTheme = createTheme({
         primary: '#ffffff',
         secondary: '#ffffff'
       }
-      // success: {
-      //   main: '#6c5dd3',
-      //   contrastText: '#ffffff',
-      // },
     },
     typography: {
       h1: {

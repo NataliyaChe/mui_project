@@ -14,6 +14,9 @@ export const LightTheme = createTheme({
         main:  '#FF754C',
         contrastText: '#ffffff',
       },
+      success: {
+        main: '#ddedff',
+      },
       background: {
         default: "#fdfdfd",
         paper: '#f5fbff'
@@ -22,10 +25,6 @@ export const LightTheme = createTheme({
         primary: '#11142D',
         secondary: '#121212'
       }
-      // success: {
-      //   main: '#ddedff',
-      //   contrastText: '#121212'
-      // },
     },
     typography: {
       h1: {

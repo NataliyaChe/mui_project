@@ -47,7 +47,7 @@ export function Aside() {
             <Typography variant='h5' sx={{ml: '24px', mb: '16px', color: 'text.secondary'}}>
                 Your learning point 
             </Typography>
-            <Paper sx={{width: 444, height: 187, borderRadius: '24px', bgcolor: '#ddedff', ml: '24px' }} elevation={0} />
+            <Paper sx={{width: 444, height: 187, borderRadius: '24px', bgcolor: 'success.main', ml: '24px' }} elevation={0} />
         </Box>   
     )
 }
